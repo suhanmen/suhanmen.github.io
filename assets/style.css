@@ -8,8 +8,10 @@ section { max-width: 800px; margin: 2em auto; background: white; padding: 1.5em;
 nav a {
     color: #111 !important;
     text-decoration: none;
+    font-weight: bold;
   }
   
   nav a:visited {
     color: #111 !important;
   }
+  
