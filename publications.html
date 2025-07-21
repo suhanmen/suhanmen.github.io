@@ -6,3 +6,99 @@
 <nav><ul><li><a href="index.html">Home</a></li><li><a href="publications.html">Publications</a></li><li><a href="cv.html">CV</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
 <section><h2>Journal Papers</h2><p>Blarblar journal 1</p><p>Blarblar journal 2</p></section>
 <section><h2>Conference Papers</h2><p>Blarblar conf 1</p><p>Blarblar conf 2</p></section></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .filter-btns {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    .filter-btns button {
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    .filter-btns button:hover {
+      background-color: #2980b9;
+    }
+    .paper {
+      margin-bottom: 1.5em;
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+    .paper em {
+      display: inline;
+      font-style: italic;
+    }
+    .paper a {
+      font-size: 0.95em;
+      display: inline-block;
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Publications</h1></header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section>
+    <div class="filter-btns">
+      <button onclick="filterPubs('all')">All</button>
+      <button onclick="filterPubs('journal')">Journals</button>
+      <button onclick="filterPubs('conference')">Conferences</button>
+      <button onclick="filterPubs('arxiv')">Preprints</button>
+    </div>
+    <div id="pub-list">
+      <div class="paper journal visible">
+        <strong>Blarblar Journal Paper</strong><br/>
+        Author A, Author B<br/>
+        <em>Journal of Blarblar Studies 2025</em><br/>
+        <a href="#">[Link]</a>
+      </div>
+      <div class="paper conference visible">
+        <strong>Blarblar Conference Paper</strong><br/>
+        Author A, Author B<br/>
+        <em>Conference on Blarblar Systems 2024</em><br/>
+        <a href="#">[Link]</a>
+      </div>
+      <div class="paper arxiv visible">
+        <strong>Blarblar Preprint</strong><br/>
+        Author A, Author B<br/>
+        <em>arXiv Preprint</em><br/>
+        <a href="#">[Link]</a>
+      </div>
+    </div>
+    <p><small><sup>*</sup> indicates co-first authorship.</small></p>
+  </section>
+  <script>
+    function filterPubs(category) {
+      const papers = document.querySelectorAll('.paper');
+      papers.forEach(paper => {
+        if (category === 'all' || paper.classList.contains(category)) {
+          paper.classList.add('visible');
+        } else {
+          paper.classList.remove('visible');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
