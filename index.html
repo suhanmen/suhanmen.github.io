@@ -1,38 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Peer0</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: black;
-      color: white;
       font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      background-color: #f8f9fa;
+    }
+
+    header {
       text-align: center;
+      padding: 40px 20px 20px;
+      background-color: white;
     }
 
-    h1 {
-      font-size: 4em;
-      margin: 0.2em 0;
+    header h1 {
+      margin-bottom: 5px;
     }
 
-    h2 {
-      font-weight: normal;
-      font-size: 2em;
-      margin: 0.2em 0;
+    header p {
+      color: #666;
+      font-size: 1.1em;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+      margin: 20px auto;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #f1f3f5;
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .news li {
+      margin-bottom: 10px;
+    }
+
+    .news li a {
+      color: #007BFF;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Peer0</h1>
-  <h2>LayerZero Labs</h2>
+
+  <header>
+    <h1>Your Name</h1>
+    <p>Your Position · Your University</p>
+    <img src="profile.jpg" alt="Profile" class="profile-img" />
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Publications</a>
+    <a href="#">CV</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Blarblar blarblar blarblar blarblar blarblar blarblar blarblar.</p>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+    <ul>
+      <li>Blarblar topic one</li>
+      <li>Blarblar topic two</li>
+      <li>Blarblar topic three</li>
+      <li>Blarblar topic four</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Recent News</h2>
+    <ul class="news">
+      <li>📌 Blarblar paper accepted at XYZ. <a href="#">Read more</a></li>
+      <li>✅ Blarblar talk given at ABC 2025. <a href="#">Read more</a></li>
+      <li>🧠 New paper on blarblar submitted. <a href="#">Read more</a></li>
+    </ul>
+  </section>
+
 </body>
 </html>
