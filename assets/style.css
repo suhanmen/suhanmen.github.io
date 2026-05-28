@@ -5,7 +5,8 @@
   --muted: #666;
   --border: #e7e7e7;
   --bg: #ffffff;
-  --max-width: 780px;
+  --sidebar-width: 220px;
+  --layout-max: 1080px;
 }
 
 * {
@@ -37,59 +38,104 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Top bar ---------- */
-.topbar {
+/* ---------- Two-column layout ---------- */
+.layout {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5em 1.5em;
-  padding: 1.4em max(1.5em, calc((100% - var(--max-width)) / 2 + 1.5em));
-  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+  gap: 3.5em;
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 3em 2em 4em;
 }
 
-.brand {
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+  position: sticky;
+  top: 2.5em;
+}
+
+.sidebar .avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.sidebar-name {
+  font-size: 1.4em;
   font-weight: 700;
-  font-size: 1.15em;
-  color: var(--text);
+  margin-top: 0.85em;
+  line-height: 1.2;
 }
 
-.brand:hover {
-  text-decoration: none;
-  color: var(--accent);
+.sidebar-affil {
+  color: var(--muted);
+  font-size: 0.9em;
+  line-height: 1.55;
+  margin-top: 0.4em;
 }
 
-.topbar nav {
+.sidebar-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25em;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 1.1em;
+  font-size: 0.95em;
 }
 
-.topbar nav a {
+.sidebar-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-weight: 500;
+}
+
+.sidebar-links svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  margin-top: 1.4em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-nav a {
   color: var(--muted);
   font-weight: 500;
 }
 
-.topbar nav a:hover {
+.sidebar-nav a:hover {
   color: var(--accent);
   text-decoration: none;
 }
 
-.topbar nav a.active {
-  color: var(--text);
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 2px;
+.sidebar-nav a.active {
+  color: var(--accent);
+  font-weight: 700;
 }
 
-/* ---------- Layout ---------- */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1.5em 1.5em 4em;
-}
-
+/* ---------- Content typography ---------- */
 section {
-  margin: 2.4em 0;
+  margin: 0 0 2.4em;
+}
+
+.content > section:first-child {
+  margin-top: 0;
 }
 
 h1 {
@@ -120,42 +166,6 @@ ul {
 
 li {
   margin-bottom: 0.4em;
-}
-
-/* ---------- Home intro ---------- */
-.intro {
-  display: flex;
-  align-items: center;
-  gap: 1.6em;
-  margin-top: 2.4em;
-}
-
-.intro .avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 18%;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-}
-
-.intro h1 {
-  margin-bottom: 0.15em;
-}
-
-.intro .affiliation {
-  color: var(--muted);
-  margin-bottom: 0.5em;
-}
-
-.intro .links {
-  margin: 0;
-  font-size: 0.97em;
-}
-
-.intro .links a {
-  font-weight: 500;
 }
 
 /* ---------- News ---------- */
@@ -216,11 +226,41 @@ li {
 }
 
 .paper.visible {
-  display: block;
+  display: flex;
+  gap: 1.1em;
 }
 
 .paper:last-child {
   border-bottom: none;
+}
+
+.paper-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.venue-tag {
+  flex: 0 0 92px;
+  align-self: start;
+  margin-top: 0.2em;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.tag-preprint {
+  background: #eef1f4;
+  color: #5b6b7a;
+}
+
+.tag-peer {
+  background: var(--accent);
+  color: #fff;
 }
 
 .paper .title {
@@ -289,18 +329,46 @@ li {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     font-size: 16px;
   }
 
-  .intro {
+  .layout {
     flex-direction: column;
-    text-align: center;
-    gap: 1em;
+    gap: 2em;
+    padding: 2em 1.5em 3em;
   }
 
-  .topbar {
+  .sidebar {
+    position: static;
+    flex-basis: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar .avatar {
+    margin: 0 auto;
+  }
+
+  .sidebar-links {
+    align-items: center;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5em 1.2em;
+  }
+
+  .paper.visible {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .venue-tag {
+    flex-basis: auto;
+    align-self: flex-start;
   }
 }

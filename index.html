@@ -8,65 +8,66 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html">Soohan Lim</a>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section class="intro">
+  <div class="layout">
+    <aside class="sidebar">
       <img class="avatar" src="assets/profile.jpg" alt="Soohan Lim" />
-      <div class="intro-text">
-        <h1>Soohan Lim</h1>
-        <p class="affiliation">
-          Integrated MS/PhD in Computer Science<br/>
-          <a href="https://toc.yonsei.ac.kr/" target="_blank">Theory of Computation (ToC) Lab</a>, Yonsei University
-        </p>
-        <p class="links">
-          <a href="mailto:aness1219@yonsei.ac.kr">Email</a> ·
-          <a href="https://github.com/suhanmen" target="_blank">GitHub</a> ·
-          <a href="https://dblp.org/pid/400/6490.html" target="_blank">DBLP</a> ·
-          <a href="https://www.linkedin.com/in/soohan-lim-174297376/" target="_blank">LinkedIn</a>
-        </p>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am an Integrated MS/PhD student in Computer Science at the Theory of Computation (ToC) Lab,
-        Yonsei University. My research focuses on program analysis and code intelligence,
-        particularly time complexity prediction, test case generation, and multi-agent debate frameworks.
-        I explore how large language models (LLMs) can reason about algorithmic properties and generate
-        specification-aware test suites, integrating chain-of-thought prompting, reinforcement learning,
-        and self-play mechanisms to improve the reliability and coverage of generated test cases.
+      <div class="sidebar-name">Soohan Lim</div>
+      <p class="sidebar-affil">
+        Integrated MS/PhD in Computer Science<br/>
+        <a href="https://toc.yonsei.ac.kr/" target="_blank">Theory of Computation Lab</a>,<br/>
+        Yonsei University
       </p>
-    </section>
+      <div class="sidebar-links">
+        <a href="mailto:aness1219@yonsei.ac.kr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>
+        <a href="https://github.com/suhanmen" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+        <a href="https://dblp.org/pid/400/6490.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>DBLP</a>
+        <a href="https://www.linkedin.com/in/soohan-lim-174297376/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </aside>
 
-    <section id="research">
-      <h2>Research</h2>
-      <ul>
-        <li>Time complexity prediction and formal analysis of programs</li>
-        <li>Specification-driven test case generation using large language models</li>
-        <li>Multi-agent debate frameworks for reasoning and validation</li>
-      </ul>
-    </section>
+    <main class="content">
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am an Integrated MS/PhD student in Computer Science at the Theory of Computation (ToC) Lab,
+          Yonsei University. My research focuses on program analysis and code intelligence,
+          particularly time complexity prediction, test case generation, and multi-agent debate frameworks.
+          I explore how large language models (LLMs) can reason about algorithmic properties and generate
+          specification-aware test suites, integrating chain-of-thought prompting, reinforcement learning,
+          and self-play mechanisms to improve the reliability and coverage of generated test cases.
+        </p>
+      </section>
 
-    <section id="news">
-      <h2>Recent News</h2>
-      <ul>
-        <li>
-          <span class="tag-new">NEW</span>
-          Our paper "ContractEval" has been accepted to Findings of ACL 2026.
-          <span class="news-date">(Jan 8, 2026)</span>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <section id="research">
+        <h2>Research</h2>
+        <ul>
+          <li>Time complexity prediction and formal analysis of programs</li>
+          <li>Specification-driven test case generation using large language models</li>
+          <li>Multi-agent debate frameworks for reasoning and validation</li>
+        </ul>
+      </section>
+
+      <section id="news">
+        <h2>Recent News</h2>
+        <ul>
+          <li>
+            <span class="tag-new">NEW</span>
+            Our paper "ContractEval" has been accepted to Findings of ACL 2026.
+            <span class="news-date">(Jan 8, 2026)</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
