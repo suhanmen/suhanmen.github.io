@@ -3,134 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publications</title>
+  <meta name="description" content="Publications by Soohan Lim — program analysis, code intelligence, and LLM-based reasoning." />
+  <title>Publications — Soohan Lim</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <style>
-    .filter-btns {
-      text-align: center;
-      margin-bottom: 1.5em;
-    }
-    .filter-btns button {
-      margin: 5px;
-      padding: 8px 15px;
-      cursor: pointer;
-      background-color: #3498db;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-    .filter-btns button:hover {
-      background-color: #2980b9;
-    }
-    .paper {
-      margin-bottom: 1.5em;
-      display: none;
-    }
-    .visible {
-      display: block;
-    }
-    .paper em {
-      display: inline;
-      font-style: italic;
-    }
-    .paper a {
-      font-size: 0.95em;
-      display: inline-block;
-      margin-left: 0.5em;
-    }
-  </style>
 </head>
 <body>
-  <header><h1>Publications</h1></header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <section>
+  <header class="topbar">
+    <a class="brand" href="index.html">Soohan Lim</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Publications</h1>
+
     <div class="filter-btns">
-      <button onclick="filterPubs('all')">All</button>
-      <button onclick="filterPubs('journal')">Journals</button>
-      <button onclick="filterPubs('conference')">Conferences</button>
-      <button onclick="filterPubs('arxiv')">Preprints</button>
+      <button class="active" onclick="filterPubs('all', this)">All</button>
+      <button onclick="filterPubs('journal', this)">Journals</button>
+      <button onclick="filterPubs('conference', this)">Conferences</button>
+      <button onclick="filterPubs('arxiv', this)">Preprints</button>
     </div>
+
     <div id="pub-list">
-      <!-- <div class="paper journal visible">
-        <strong>Blarblar Journal Paper</strong><br/>
-        Author A, Author B<br/>
-        <em>Journal of Blarblar Studies 2025</em><br/>
-        <a href="#">[Link]</a>
-      </div> -->
-      
       <div class="paper arxiv visible">
-        <strong>STAB: Specification-driven Testing for Algorithmic Bottlenecks</strong><br/>
-        Soohan Lim*, Joonghyuk Hahn*, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>arXiv Preprint</em><br/>
-        <a href="https://arxiv.org/abs/2605.27981" target="_blank">[Paper]</a>
-        <a href="https://github.com/suhanmen/STAB" target="_blank">[Code]</a>
+        <span class="title">STAB: Specification-driven Testing for Algorithmic Bottlenecks</span>
+        <span class="authors"><span class="me">Soohan Lim</span>*, Joonghyuk Hahn*, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">arXiv Preprint</span>
+        <span class="links">
+          <a href="https://arxiv.org/abs/2605.27981" target="_blank">Paper</a>
+          <a href="https://github.com/suhanmen/STAB" target="_blank">Code</a>
+        </span>
       </div>
+
       <div class="paper conference visible">
-        <strong>ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation</strong><br/>
-        Soohan Lim*, Joonghyuk Hahn*, Hyunwoo Park, Sang-Ki Ko, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>Findings of ACL 2026</em><br/>
-        <a href="https://arxiv.org/abs/2510.12047" target="_blank">[Paper]</a>
-        <a href="https://github.com/suhanmen/ContractEval" target="_blank">[Code]</a>
+        <span class="title">ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation</span>
+        <span class="authors"><span class="me">Soohan Lim</span>*, Joonghyuk Hahn*, Hyunwoo Park, Sang-Ki Ko, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">Findings of ACL 2026</span>
+        <span class="links">
+          <a href="https://arxiv.org/abs/2510.12047" target="_blank">Paper</a>
+          <a href="https://github.com/suhanmen/ContractEval" target="_blank">Code</a>
+        </span>
       </div>
+
       <div class="paper conference visible">
-        <strong>K-SpecDetox: Korean Spectral Energy-based Detection and Detoxification of Dialect Profanity</strong><br/>
-        Soohan Lim, Sang-Min Choi, Yo-Sub Han<br/>
-        <em>KCC 2026 (Poster)</em><br/>
+        <span class="title">K-SpecDetox: Korean Spectral Energy-based Detection and Detoxification of Dialect Profanity</span>
+        <span class="authors"><span class="me">Soohan Lim</span>, Sang-Min Choi, Yo-Sub Han</span>
+        <span class="venue">KCC 2026 (Poster)</span>
       </div>
+
       <div class="paper arxiv visible">
-        <strong>MEC3O: Multi-Expert Consensus for Code Time Complexity Prediction</strong><br/>
-        Joonghyuk Hahn*, Soohan Lim*, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>arXiv Preprint</em><br/>
-        <a href="https://arxiv.org/abs/2510.09049" target="_blank">[Paper]</a>
-        <a href="https://github.com/suhanmen/MECO" target="_blank">[Code]</a>
-      </div>
-      <div class="paper conference visible">
-        <strong>K-ToPiC: Korean Dialect Toxicity Polishing with Curriculum Learning-based Span Detection</strong><br/>
-        Jungin Kim*, Soohan Lim*, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>KCC 2025 (Oral Presentation)</em><br/>
-      </div>
-      <div class="paper conference visible">
-        <strong>TCProF:Time-Complexity Prediction SSL Framework</strong><br/>
-        Joonghyuk Hahn, Hyeseon Ahn, Jungin Kim, Soohan Lim, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>NAACL 2025 (Oral Presentation)</em><br/>
-        <a href="https://aclanthology.org/2025.naacl-long.482/" target="_blank">[Link]</a>
-        <a href="https://github.com/peer0/few-shot-tc" target="_blank">[Code]</a>
-      </div>
-      <div class="paper conference visible">
-        <strong>CA-DiaL: Curriculum and Attribute-Based Learning for Korean Dialect Translation using LLMs</strong><br/>
-        Soohan Lim, Joonghyuk Hahn, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup><br/>
-        <em>KSC 2024 (Poster)</em><br/>
+        <span class="title">MEC3O: Multi-Expert Consensus for Code Time Complexity Prediction</span>
+        <span class="authors">Joonghyuk Hahn*, <span class="me">Soohan Lim</span>*, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">arXiv Preprint</span>
+        <span class="links">
+          <a href="https://arxiv.org/abs/2510.09049" target="_blank">Paper</a>
+          <a href="https://github.com/suhanmen/MECO" target="_blank">Code</a>
+        </span>
       </div>
 
+      <div class="paper conference visible">
+        <span class="title">K-ToPiC: Korean Dialect Toxicity Polishing with Curriculum Learning-based Span Detection</span>
+        <span class="authors">Jungin Kim*, <span class="me">Soohan Lim</span>*, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">KCC 2025 (Oral Presentation)</span>
+      </div>
 
+      <div class="paper conference visible">
+        <span class="title">TCProF: Time-Complexity Prediction SSL Framework</span>
+        <span class="authors">Joonghyuk Hahn, Hyeseon Ahn, Jungin Kim, <span class="me">Soohan Lim</span>, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">NAACL 2025 (Oral Presentation)</span>
+        <span class="links">
+          <a href="https://aclanthology.org/2025.naacl-long.482/" target="_blank">Link</a>
+          <a href="https://github.com/peer0/few-shot-tc" target="_blank">Code</a>
+        </span>
+      </div>
 
-      <!-- <div class="paper arxiv visible">
-        <strong>Blarblar Preprint</strong><br/>
-        Author A, Author B<br/>
-        <em>arXiv Preprint</em><br/>
-        <a href="#">[Link]</a>
-      </div> -->
+      <div class="paper conference visible">
+        <span class="title">CA-DiaL: Curriculum and Attribute-Based Learning for Korean Dialect Translation using LLMs</span>
+        <span class="authors"><span class="me">Soohan Lim</span>, Joonghyuk Hahn, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup></span>
+        <span class="venue">KSC 2024 (Poster)</span>
+      </div>
     </div>
-    <p><small><sup>*</sup> indicates co-first authorship; <sup>&dagger;</sup> indicates corresponding author.</small></p>
-  </section>
+
+    <p class="footnote"><sup>*</sup> indicates co-first authorship; <sup>&dagger;</sup> indicates corresponding author.</p>
+  </main>
+
   <script>
-    function filterPubs(category) {
-      const papers = document.querySelectorAll('.paper');
-      papers.forEach(paper => {
-        if (category === 'all' || paper.classList.contains(category)) {
-          paper.classList.add('visible');
-        } else {
-          paper.classList.remove('visible');
-        }
+    function filterPubs(category, btn) {
+      document.querySelectorAll('.paper').forEach(paper => {
+        const show = category === 'all' || paper.classList.contains(category);
+        paper.classList.toggle('visible', show);
       });
+      document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
   </script>
 </body>

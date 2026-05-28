@@ -3,50 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soohan Lim — Integrated MS/PhD student in Computer Science at Yonsei University (Theory of Computation Lab), working on program analysis and code intelligence." />
   <title>Soohan Lim</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Soohan Lim</h1>
-    <p>Integrated MS/PhD Program in Computer Science, Yonsei University</p>
-    <img src="assets/profile.jpg" alt="Profile photo" width="150" />
+  <header class="topbar">
+    <a class="brand" href="index.html">Soohan Lim</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <main class="container">
+    <section class="intro">
+      <img class="avatar" src="assets/profile.jpg" alt="Soohan Lim" />
+      <div class="intro-text">
+        <h1>Soohan Lim</h1>
+        <p class="affiliation">
+          Integrated MS/PhD in Computer Science<br/>
+          <a href="https://toc.yonsei.ac.kr/" target="_blank">Theory of Computation (ToC) Lab</a>, Yonsei University
+        </p>
+        <p class="links">
+          <a href="mailto:aness1219@yonsei.ac.kr">Email</a> ·
+          <a href="https://github.com/suhanmen" target="_blank">GitHub</a> ·
+          <a href="https://dblp.org/pid/400/6490.html" target="_blank">DBLP</a> ·
+          <a href="https://www.linkedin.com/in/soohan-lim-174297376/" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am an Integrated MS/PhD student in Computer Science at 
-        <a href="https://toc.yonsei.ac.kr/" target="_blank">Theory of Computation (ToC) Lab</a>, Yonsei University.
-        My research focuses on program analysis and code intelligence, 
-        particularly in the areas of time complexity prediction, test case generation, and multi-agent debate frameworks. 
-        I explore how large language models (LLMs) can reason about algorithmic properties and generate specification-aware test suites. 
-        I have proposed novel methods that integrate chain-of-thought prompting, reinforcement learning, and self-play mechanisms to improve the reliability and coverage of generated test cases.
-    </p>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am an Integrated MS/PhD student in Computer Science at the Theory of Computation (ToC) Lab,
+        Yonsei University. My research focuses on program analysis and code intelligence,
+        particularly time complexity prediction, test case generation, and multi-agent debate frameworks.
+        I explore how large language models (LLMs) can reason about algorithmic properties and generate
+        specification-aware test suites, integrating chain-of-thought prompting, reinforcement learning,
+        and self-play mechanisms to improve the reliability and coverage of generated test cases.
+      </p>
+    </section>
 
-  <section id="research">
-    <h2>Research</h2>
-    <ul>
+    <section id="research">
+      <h2>Research</h2>
+      <ul>
         <li>Time complexity prediction and formal analysis of programs</li>
         <li>Specification-driven test case generation using large language models</li>
         <li>Multi-agent debate frameworks for reasoning and validation</li>
-    </ul>
-  </section>
+      </ul>
+    </section>
 
-  <section id="news">
-    <h2>Recent News</h2>
-    <ul>
-      <li><strong>NEW!</strong> Our paper "ContractEval" has been accepted to Findings of ACL 2026. (Jan 8, 2026)</li>
-    </ul>
-  </section>
+    <section id="news">
+      <h2>Recent News</h2>
+      <ul>
+        <li>
+          <span class="tag-new">NEW</span>
+          Our paper "ContractEval" has been accepted to Findings of ACL 2026.
+          <span class="news-date">(Jan 8, 2026)</span>
+        </li>
+      </ul>
+    </section>
+  </main>
 </body>
+</html>
