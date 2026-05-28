@@ -5,7 +5,7 @@
   --muted: #666;
   --border: #e7e7e7;
   --bg: #ffffff;
-  --max-width: 720px;
+  --max-width: 780px;
 }
 
 * {
@@ -44,9 +44,7 @@ a:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5em 1.5em;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1.4em 1.5em;
+  padding: 1.4em max(1.5em, calc((100% - var(--max-width)) / 2 + 1.5em));
   border-bottom: 1px solid var(--border);
 }
 
@@ -133,10 +131,11 @@ li {
 }
 
 .intro .avatar {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 50% 18%;
   flex-shrink: 0;
   border: 1px solid var(--border);
 }
