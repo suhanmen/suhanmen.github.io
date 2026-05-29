@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Research of Soohan Lim — program analysis, code intelligence, and LLM-based reasoning." />
+  <title>Research — Soohan Lim</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Soohan Lim</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Research</h1>
+    <p>
+      My work centers on program analysis and code intelligence — using large language models (LLMs)
+      to reason about the algorithmic properties of code and to generate specification-aware test suites.
+      Below are the main directions I work on, with related publications listed on the
+      <a href="publications.html">Publications</a> page.
+    </p>
+
+    <section>
+      <h2>Time Complexity Prediction</h2>
+      <p>
+        Predicting and formally analyzing the time complexity of programs, including semi-supervised
+        learning in low-resource settings and multi-expert consensus approaches.
+      </p>
+      <p class="related">Related: TCProF (NAACL 2025), MEC3O.</p>
+    </section>
+
+    <section>
+      <h2>Specification-driven Test Generation</h2>
+      <p>
+        Generating specification-aware test cases with LLMs — exposing algorithmic bottlenecks and
+        checking whether generated code enforces input preconditions (contracts), often through
+        neuro-symbolic LLM&ndash;SMT pipelines.
+      </p>
+      <p class="related">Related: STAB, ContractEval (Findings of ACL 2026).</p>
+    </section>
+
+    <section>
+      <h2>Multi-agent Debate &amp; Reasoning</h2>
+      <p>
+        Frameworks in which multiple LLM agents debate to improve reasoning, validation, and
+        decision-making for program analysis tasks.
+      </p>
+      <p class="related">Related: MEC3O.</p>
+    </section>
+
+    <section>
+      <h2>Korean NLP</h2>
+      <p>
+        Detection and detoxification of Korean dialect toxicity, and dialect translation with
+        curriculum- and attribute-based learning.
+      </p>
+      <p class="related">Related: K-SpecDetox (KCC 2026), K-ToPiC (KCC 2025), CA-DiaL (KSC 2024).</p>
+    </section>
+  </main>
+</body>
+</html>

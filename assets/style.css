@@ -87,7 +87,8 @@ a:hover {
 }
 
 .topbar nav a.active {
-  color: var(--text);
+  color: var(--accent);
+  font-weight: 700;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 2px;
 }
@@ -352,6 +353,17 @@ li {
 .cv-meta {
   color: var(--muted);
   margin-top: -0.2em;
+}
+
+.last-updated {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-top: 1.5em;
+}
+
+.related {
+  color: var(--muted);
+  font-size: 0.9em;
 }
 
 /* ---------- Contact ---------- */
