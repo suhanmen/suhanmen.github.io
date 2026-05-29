@@ -63,12 +63,12 @@ a:hover {
 .brand {
   font-weight: 700;
   font-size: 1.15em;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .brand:hover {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 
 .topbar nav {
