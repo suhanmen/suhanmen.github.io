@@ -41,27 +41,40 @@
 
     <figure class="mindmap-figure">
       <pre class="mermaid">
-mindmap
-  root((LLM Research))
-    Code Efficiency
-      Time Complexity Prediction
-        TCProF
-        MEC³O
-      Test Case Generation
-        STAB
-        ContractEval
-    Multi-Agent System
-      Multi-Agent Debate
-        MEC³O
-    Korean NLP
-      K-SpecDetox
-      K-ToPiC
-      CA-DiaL
-    Future Directions
-      )Planned work(
-      )Under development(
+flowchart LR
+  root([LLM Research]):::root
+  root --> ce[Code Efficiency]:::cat
+  root --> mas[Multi-Agent System]:::cat
+  root --> knlp[Korean NLP]:::cat
+  root --> fut[Future Directions]:::cat
+  ce --> tcp[Time Complexity Prediction]:::topic
+  ce --> tcg[Test Case Generation]:::topic
+  tcp --> p_tcprof[TCProF]:::paper
+  tcp --> p_mec1[MEC³O]:::paper
+  tcg --> p_stab[STAB]:::paper
+  tcg --> p_ceval[ContractEval]:::paper
+  mas --> mad[Multi-Agent Debate]:::topic
+  mad --> p_mec2[MEC³O]:::paper
+  knlp --> p_kspec[K-SpecDetox]:::paper
+  knlp --> p_ktopic[K-ToPiC]:::paper
+  knlp --> p_cadial[CA-DiaL]:::paper
+  fut --> f_plan[Planned work]:::future
+  fut --> f_dev[Under development]:::future
+  classDef root fill:#ffffff,stroke:#1f4e79,stroke-width:2px,color:#1a1a1a;
+  classDef cat fill:#1a1a1a,stroke:#1a1a1a,color:#ffffff;
+  classDef topic fill:#ffffff,stroke:#c4ccd4,color:#1a1a1a;
+  classDef paper fill:#ffffff,stroke:#1f4e79,color:#1f4e79;
+  classDef future fill:#ffffff,stroke:#c4ccd4,color:#8a929b,stroke-dasharray:4 3;
+  click p_tcprof "https://arxiv.org/abs/2502.15749" _blank
+  click p_mec1 "https://arxiv.org/abs/2510.09049" _blank
+  click p_stab "https://arxiv.org/abs/2605.27981" _blank
+  click p_ceval "https://arxiv.org/abs/2510.12047" _blank
+  click p_mec2 "https://arxiv.org/abs/2510.09049" _blank
+  click p_kspec "publications.html" _blank
+  click p_ktopic "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" _blank
+  click p_cadial "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" _blank
 </pre>
-      <figcaption>Research map — topics, related work, and planned directions.</figcaption>
+      <figcaption>Research map — categories, related papers (click to open), and planned directions.</figcaption>
     </figure>
 
     <section>
@@ -106,17 +119,10 @@ mindmap
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     mermaid.initialize({
       startOnLoad: true,
+      securityLevel: 'loose',
       theme: 'base',
       themeVariables: {
-        fontFamily: 'Arial, sans-serif',
-        cScale0: '#4c6ef5',
-        cScale1: '#12b886',
-        cScale2: '#e64980',
-        cScale3: '#f59f00',
-        cScaleLabel0: '#ffffff',
-        cScaleLabel1: '#ffffff',
-        cScaleLabel2: '#ffffff',
-        cScaleLabel3: '#ffffff'
+        fontFamily: 'Arial, sans-serif'
       }
     });
   </script>
