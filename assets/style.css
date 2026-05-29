@@ -5,8 +5,9 @@
   --muted: #666;
   --border: #e7e7e7;
   --bg: #ffffff;
-  --sidebar-width: 220px;
+  --sidebar-width: 240px;
   --layout-max: 1080px;
+  --max-width: 780px;
 }
 
 * {
@@ -38,14 +39,74 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Two-column layout ---------- */
+/* ---------- Top bar (all pages) ---------- */
+.topbar {
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.2em 1.5em;
+}
+
+.page-home .topbar-inner {
+  max-width: var(--layout-max);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: var(--text);
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25em;
+}
+
+.topbar nav a {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.topbar nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.topbar nav a.active {
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ---------- Centered layout (Publications / CV / Contact) ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5em 1.5em 4em;
+}
+
+/* ---------- Two-column layout (Home) ---------- */
 .layout {
   display: flex;
   align-items: flex-start;
   gap: 3.5em;
   max-width: var(--layout-max);
   margin: 0 auto;
-  padding: 3em 2em 4em;
+  padding: 2.8em 2em 4em;
 }
 
 .content {
@@ -53,16 +114,20 @@ a:hover {
   min-width: 0;
 }
 
-/* ---------- Sidebar ---------- */
+.page-home .content {
+  font-size: 1.08em;
+}
+
+/* ---------- Sidebar (Home only) ---------- */
 .sidebar {
   flex: 0 0 var(--sidebar-width);
   position: sticky;
-  top: 2.5em;
+  top: 2em;
 }
 
 .sidebar .avatar {
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 18%;
@@ -71,7 +136,7 @@ a:hover {
 }
 
 .sidebar-name {
-  font-size: 1.4em;
+  font-size: 1.55em;
   font-weight: 700;
   margin-top: 0.85em;
   line-height: 1.2;
@@ -79,7 +144,7 @@ a:hover {
 
 .sidebar-affil {
   color: var(--muted);
-  font-size: 0.9em;
+  font-size: 0.95em;
   line-height: 1.55;
   margin-top: 0.4em;
 }
@@ -87,9 +152,9 @@ a:hover {
 .sidebar-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  margin-top: 1.1em;
-  font-size: 0.95em;
+  gap: 0.55em;
+  margin-top: 1.2em;
+  font-size: 1em;
 }
 
 .sidebar-links a {
@@ -100,33 +165,9 @@ a:hover {
 }
 
 .sidebar-links svg {
-  width: 1.05em;
-  height: 1.05em;
+  width: 1.1em;
+  height: 1.1em;
   flex-shrink: 0;
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55em;
-  margin-top: 1.4em;
-  padding-top: 1.2em;
-  border-top: 1px solid var(--border);
-}
-
-.sidebar-nav a {
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.sidebar-nav a:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.sidebar-nav a.active {
-  color: var(--accent);
-  font-weight: 700;
 }
 
 /* ---------- Content typography ---------- */
@@ -334,10 +375,23 @@ li {
     font-size: 16px;
   }
 
+  .topbar-inner {
+    justify-content: center;
+    padding: 1em 1.5em;
+  }
+
+  .container {
+    padding: 2em 1.5em 3em;
+  }
+
   .layout {
     flex-direction: column;
     gap: 2em;
     padding: 2em 1.5em 3em;
+  }
+
+  .page-home .content {
+    font-size: 1em;
   }
 
   .sidebar {
@@ -353,13 +407,6 @@ li {
 
   .sidebar-links {
     align-items: center;
-  }
-
-  .sidebar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5em 1.2em;
   }
 
   .paper.visible {
