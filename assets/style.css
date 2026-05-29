@@ -42,6 +42,7 @@ a:hover {
 
 /* ---------- Top bar (all pages) ---------- */
 .topbar {
+  background: #f3f6fa;
   border-bottom: 1px solid var(--border);
 }
 
