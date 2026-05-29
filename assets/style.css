@@ -171,11 +171,12 @@ a:hover {
   flex-shrink: 0;
 }
 
-.sidebar-links .link-logo {
-  width: 1.25em;
-  height: 1.25em;
+.sidebar-affil .affil-logo {
+  width: 1.1em;
+  height: 1.1em;
   object-fit: contain;
-  flex-shrink: 0;
+  vertical-align: -0.2em;
+  margin-right: 0.35em;
 }
 
 /* ---------- Content typography ---------- */
