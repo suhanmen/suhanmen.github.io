@@ -39,6 +39,30 @@
       <a href="publications.html">Publications</a> page.
     </p>
 
+    <figure class="mindmap-figure">
+      <pre class="mermaid">
+mindmap
+  root((LLM-based Code Intelligence))
+    Code Efficiency
+      Time Complexity Prediction
+        TCProF
+        MEC3O
+      Test Case Generation
+        STAB
+        ContractEval
+      Multi-agent Debate
+        MEC3O
+    Korean NLP
+      K-SpecDetox
+      K-ToPiC
+      CA-DiaL
+    Future Directions
+      )Planned work(
+      )Under development(
+</pre>
+      <figcaption>Research map — topics, related work, and planned directions.</figcaption>
+    </figure>
+
     <section>
       <h2>Time Complexity Prediction</h2>
       <p>
@@ -76,5 +100,20 @@
       <p class="related">Related: <a href="publications.html">K-SpecDetox</a> (KCC 2026), <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" target="_blank">K-ToPiC</a> (KCC 2025), <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" target="_blank">CA-DiaL</a> (KSC 2024).</p>
     </section>
   </main>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#1f4e79',
+        primaryTextColor: '#ffffff',
+        primaryBorderColor: '#1f4e79',
+        lineColor: '#9aa4ad',
+        fontFamily: 'inherit'
+      }
+    });
+  </script>
 </body>
 </html>

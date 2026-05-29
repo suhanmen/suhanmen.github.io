@@ -378,6 +378,28 @@ li {
   font-size: 0.9em;
 }
 
+/* ---------- Research mindmap ---------- */
+.mindmap-figure {
+  margin: 0 0 2.6em;
+  text-align: center;
+}
+
+.mindmap-figure pre.mermaid {
+  margin: 0;
+  background: none;
+  font-family: inherit;
+}
+
+.mindmap-figure pre.mermaid:not([data-processed="true"]) {
+  color: transparent;
+}
+
+.mindmap-figure figcaption {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-top: 0.6em;
+}
+
 /* ---------- Contact ---------- */
 .contact-info {
   font-size: 1.05em;
