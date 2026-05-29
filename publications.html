@@ -33,6 +33,7 @@
 
     <div class="filter-btns">
       <button class="active" onclick="filterPubs('all', this)">All</button>
+      <button onclick="filterPubs('journal', this)">Journals</button>
       <button onclick="filterPubs('conference', this)">Conferences</button>
       <button onclick="filterPubs('arxiv', this)">Preprints</button>
     </div>
@@ -123,17 +124,22 @@
       </div>
     </div>
 
+    <p id="pub-empty" class="footnote" hidden>No publications in this category yet.</p>
+
     <p class="footnote"><sup>*</sup> indicates co-first authorship; <sup>&dagger;</sup> indicates corresponding author.</p>
   </main>
 
   <script>
     function filterPubs(category, btn) {
+      let visible = 0;
       document.querySelectorAll('.paper').forEach(paper => {
         const show = category === 'all' || paper.classList.contains(category);
         paper.classList.toggle('visible', show);
+        if (show) visible++;
       });
       document.querySelectorAll('.filter-btns button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      document.getElementById('pub-empty').hidden = visible > 0;
     }
   </script>
 </body>
