@@ -41,6 +41,18 @@
 
     <figure class="mindmap-figure">
       <pre class="mermaid">
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Arial, sans-serif
+    fontSize: 12px
+  flowchart:
+    nodeSpacing: 22
+    rankSpacing: 40
+    padding: 4
+    useMaxWidth: false
+---
 flowchart LR
   root([LLM Research]):::root
   root --> ce[Code Efficiency]:::cat
@@ -65,14 +77,14 @@ flowchart LR
   classDef topic fill:#ffffff,stroke:#c4ccd4,color:#1a1a1a;
   classDef paper fill:#ffffff,stroke:#1f4e79,color:#1f4e79;
   classDef future fill:#ffffff,stroke:#c4ccd4,color:#8a929b,stroke-dasharray:4 3;
-  click p_tcprof "https://arxiv.org/abs/2502.15749" _blank
-  click p_mec1 "https://arxiv.org/abs/2510.09049" _blank
-  click p_stab "https://arxiv.org/abs/2605.27981" _blank
-  click p_ceval "https://arxiv.org/abs/2510.12047" _blank
-  click p_mec2 "https://arxiv.org/abs/2510.09049" _blank
-  click p_kspec "publications.html" _blank
-  click p_ktopic "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" _blank
-  click p_cadial "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" _blank
+  click p_tcprof href "https://arxiv.org/abs/2502.15749" _blank
+  click p_mec1 href "https://arxiv.org/abs/2510.09049" _blank
+  click p_stab href "https://arxiv.org/abs/2605.27981" _blank
+  click p_ceval href "https://arxiv.org/abs/2510.12047" _blank
+  click p_mec2 href "https://arxiv.org/abs/2510.09049" _blank
+  click p_kspec href "publications.html" _blank
+  click p_ktopic href "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" _blank
+  click p_cadial href "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" _blank
 </pre>
       <figcaption>Research map — categories, related papers (click to open), and planned directions.</figcaption>
     </figure>
@@ -119,11 +131,7 @@ flowchart LR
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     mermaid.initialize({
       startOnLoad: true,
-      securityLevel: 'loose',
-      theme: 'base',
-      themeVariables: {
-        fontFamily: 'Arial, sans-serif'
-      }
+      securityLevel: 'loose'
     });
   </script>
 </body>
