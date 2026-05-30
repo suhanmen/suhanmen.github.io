@@ -40,28 +40,7 @@
     </p>
 
     <figure class="mindmap-figure">
-      <pre class="mermaid">
-flowchart LR
-  root([LLM Research]):::root
-  root --> ce[Code Efficiency]:::cat
-  root --> mas[Multi-Agent System]:::cat
-  root --> knlp[Korean NLP]:::cat
-  ce --> tcp[Time Complexity Prediction]:::topic
-  ce --> tcg[Test Case Generation]:::topic
-  tcp --> p_tcprof[TCProF NAACL’25]:::paper
-  tcp --> p_mec1[MEC³O arXiv’25]:::paper
-  tcg --> p_stab[STAB arXiv’26]:::paper
-  tcg --> p_ceval[ContractEval ACL’26]:::paper
-  mas --> mad[Multi-Agent Debate]:::topic
-  mad --> p_mec2[MEC³O arXiv’25]:::paper
-  knlp --> p_kspec[K-SpecDetox KCC’26]:::paper
-  knlp --> p_ktopic[K-ToPiC KCC’25]:::paper
-  knlp --> p_cadial[CA-DiaL KSC’24]:::paper
-  classDef root fill:#ffffff,stroke:#1f4e79,stroke-width:2px,color:#1a1a1a;
-  classDef cat fill:#1a1a1a,stroke:#1a1a1a,color:#ffffff;
-  classDef topic fill:#ffffff,stroke:#c4ccd4,color:#1a1a1a;
-  classDef paper fill:#ffffff,stroke:#1f4e79,color:#1f4e79;
-</pre>
+      <img class="research-map" src="assets/research-map.svg" alt="Research map: LLM Research branches into Code Efficiency (Time Complexity Prediction → TCProF, MEC³O; Test Case Generation → STAB, ContractEval), Multi-Agent System (Multi-Agent Debate → MEC³O), and Korean NLP (K-SpecDetox, K-ToPiC, CA-DiaL)." />
       <figcaption>Research map — categories, topics, and related papers.</figcaption>
     </figure>
 
@@ -103,24 +82,5 @@ flowchart LR
     </section>
   </main>
 
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: false,
-      securityLevel: 'loose',
-      theme: 'base',
-      themeVariables: {
-        fontFamily: 'Arial, sans-serif',
-        fontSize: '12px'
-      },
-      flowchart: {
-        nodeSpacing: 22,
-        rankSpacing: 40,
-        padding: 4,
-        useMaxWidth: true
-      }
-    });
-    await mermaid.run({ querySelector: '.mermaid' });
-  </script>
 </body>
 </html>
