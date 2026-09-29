@@ -355,6 +355,18 @@ li {
   border-color: var(--accent);
 }
 
+.paper .bibtex {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  font-size: 0.8em;
+  line-height: 1.5;
+  background: #f7f7f7;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
 .footnote {
   color: var(--muted);
   font-size: 0.85em;
