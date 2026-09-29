@@ -35,7 +35,7 @@
       <img class="avatar" src="assets/profile.jpg" alt="Soohan Lim" />
       <div class="sidebar-name">Soohan Lim</div>
       <p class="sidebar-affil">
-        3rd-year Integrated MS/PhD in Computer Science (since 2024)<br/>
+        Integrated MS/PhD student in Computer Science (since 2024)<br/>
         <a href="https://toc.yonsei.ac.kr/" target="_blank">Theory of Computation Lab</a>,<br/>
         <a href="https://www.yonsei.ac.kr/" target="_blank"><img class="affil-logo" src="assets/yonsei.png" alt="" />Yonsei University</a>
       </p>
@@ -56,17 +56,35 @@
         <h2>About</h2>
         <p>
           I am an Integrated MS/PhD student in Computer Science at the Theory of Computation (ToC) Lab,
-          Yonsei University, advised by Prof. Yo-Sub Han. My research focuses on enhancing the
-          reliability and efficiency of programs with large language models (LLMs).
-          On the efficiency side, I go beyond predicting time complexity to generating inputs that
-          expose real algorithmic bottlenecks, so that inefficiency can be verified through execution.
-          On the reliability side, I study whether generated code satisfies not only its required
-          functionality but also its input contracts, building benchmarks that quantify this and
-          generation methods that raise specification satisfaction.
-          Since neither property can be judged from the final output alone, I take a neuro-symbolic
-          approach: LLMs interpret natural language, while structuring and verification are delegated
-          to deterministic rules, constraint solvers, and actual execution.
+          Yonsei University, advised by Prof. Yo-Sub Han. My research aims to make programs more
+          <strong>reliable</strong> and <strong>efficient</strong> with large language models (LLMs):
+          going beyond predicting time complexity to generating inputs that expose real bottlenecks, and
+          beyond functional correctness to code that also satisfies its input contracts.
+          Because neither property can be judged from the output alone, I pair LLMs that interpret the
+          specification with rules, constraint solvers, and actual execution that verify the result.
+          <a class="read-more" href="research.html">Read more about my research →</a>
         </p>
+      </section>
+
+      <section id="highlights">
+        <h2>Highlights</h2>
+        <div class="highlight-grid">
+          <a class="highlight-card" href="https://arxiv.org/abs/2608.21483" target="_blank" rel="noopener">
+            <span class="venue-tag tag-preprint">arXiv 2026</span>
+            <span class="highlight-title">SLICE</span>
+            <span class="highlight-desc">Generates code that satisfies both functionality and input contracts by isolating contract enforcement at the specification level.</span>
+          </a>
+          <a class="highlight-card" href="https://arxiv.org/abs/2605.27981" target="_blank" rel="noopener">
+            <span class="venue-tag tag-preprint">arXiv 2026</span>
+            <span class="highlight-title">STAB</span>
+            <span class="highlight-desc">Generates test inputs from the specification alone that trigger an algorithm's worst-case execution path.</span>
+          </a>
+          <a class="highlight-card" href="https://arxiv.org/abs/2510.12047" target="_blank" rel="noopener">
+            <span class="venue-tag tag-peer">ACL 2026</span>
+            <span class="highlight-title">ContractEval</span>
+            <span class="highlight-desc">A benchmark that measures whether generated code actually rejects contract-violating inputs.</span>
+          </a>
+        </div>
       </section>
 
       <section id="news">
@@ -82,44 +100,25 @@
           </li>
           <li>
             preprint: "STAB: Specification-driven Testing for Algorithmic Bottlenecks" is available on arXiv.
-            <span class="news-date">(May 27, 2026)</span>
+            <span class="news-date">(May 2026)</span>
           </li>
           <li class="news-more" hidden>
             Our paper "ContractEval" has been accepted to Findings of ACL 2026.
-            <span class="news-date">(Jan 8, 2026)</span>
+            <span class="news-date">(Jan 2026)</span>
           </li>
           <li class="news-more" hidden>
             preprint: "MEC³O: Multi-Expert Consensus for Code Time Complexity Prediction" is available on arXiv.
-            <span class="news-date">(Oct 10, 2025)</span>
+            <span class="news-date">(Oct 2025)</span>
           </li>
           <li class="news-more" hidden>
             Our paper "TCProF" was presented at NAACL 2025 (Oral).
-            <span class="news-date">(2025)</span>
+            <span class="news-date">(Apr 2025)</span>
           </li>
         </ul>
         <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" onclick="toggleNews()">Show 3 more</button>
       </section>
 
-      <section id="research-interests">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Program analysis and code intelligence</li>
-          <li>Time complexity prediction and formal analysis of programs</li>
-          <li>Specification-driven test case generation using large language models</li>
-          <li>Contract-satisfying code generation from problem specifications</li>
-          <li>Multi-agent debate frameworks for reasoning and validation</li>
-        </ul>
-      </section>
-
-      <section id="contact-info">
-        <h2>Contact Information</h2>
-        <p>
-          Department of Computer Science, Yonsei University<br/>
-          50 Yonsei-Ro, Seodaemun-Gu, Seoul 03722, Republic of Korea<br/>
-          Email: aness1219 [at] yonsei [dot] ac [dot] kr
-        </p>
-        <p class="last-updated">Last updated 2026/8/24</p>
-      </section>
+      <p class="last-updated">Last updated: September 2026</p>
     </main>
   </div>
   <script>
