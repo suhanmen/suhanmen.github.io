@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Soohan Lim — Integrated MS/PhD student in Computer Science at Yonsei University (Theory of Computation Lab), working on program analysis and code intelligence." />
+  <meta name="description" content="Soohan Lim — Integrated MS/PhD student in Computer Science at Yonsei University (Theory of Computation Lab), working on LLM-based program reliability and efficiency." />
   <title>Soohan Lim</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="assets/favicon.png" type="image/png" />
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/style.css" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Soohan Lim" />
-  <meta property="og:description" content="Integrated MS/PhD student in Computer Science at Yonsei University (Theory of Computation Lab), working on program analysis and code intelligence." />
+  <meta property="og:description" content="Integrated MS/PhD student in Computer Science at Yonsei University (Theory of Computation Lab), working on LLM-based program reliability and efficiency." />
   <meta property="og:url" content="https://suhanmen.github.io/" />
   <meta property="og:image" content="https://suhanmen.github.io/assets/profile.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -56,12 +56,16 @@
         <h2>About</h2>
         <p>
           I am an Integrated MS/PhD student in Computer Science at the Theory of Computation (ToC) Lab,
-          Yonsei University. My research focuses on program analysis and code intelligence,
-          particularly time complexity prediction, test case generation, contract-satisfying
-          code generation, and multi-agent debate frameworks.
-          I explore how large language models (LLMs) can reason about algorithmic properties and generate
-          specification-aware test suites, integrating chain-of-thought prompting, reinforcement learning,
-          and self-play mechanisms to improve the reliability and coverage of generated test cases.
+          Yonsei University, advised by Prof. Yo-Sub Han. My research focuses on enhancing the
+          reliability and efficiency of programs with large language models (LLMs).
+          On the efficiency side, I go beyond predicting time complexity to generating inputs that
+          expose real algorithmic bottlenecks, so that inefficiency can be verified through execution.
+          On the reliability side, I study whether generated code satisfies not only its required
+          functionality but also its input contracts, building benchmarks that quantify this and
+          generation methods that raise specification satisfaction.
+          Since neither property can be judged from the final output alone, I take a neuro-symbolic
+          approach: LLMs interpret natural language, while structuring and verification are delegated
+          to deterministic rules, constraint solvers, and actual execution.
         </p>
       </section>
 
