@@ -85,186 +85,129 @@
     </section>
 
     <section>
-      <h2>Research Projects</h2>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">SLICE: Specification-Level Isolation of Contract Enforcement</span>
-          <span class="proj-period">2026.05 – 2026.07</span>
-        </div>
-        <div class="proj-meta">First author · arXiv Preprint 2026 (Under Review)</div>
-        <dl>
-          <dt>Task</dt><dd>Generating code from a natural-language specification that satisfies both the functional requirements and the input contracts.</dd>
-          <dt>Method</dt><dd>The specification is structured as a graph to separate functional requirements from contract conditions. Candidate bodies generated from the functional view are ranked by executing specification examples; contract assertions are generated separately, screened by execution, and merged into the selected body.</dd>
-          <dt>Tech</dt><dd>Specification graph, multi-candidate LLM generation, execution-based verification, token log-probability selection</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">STAB: Specification-driven Testing for Algorithmic Bottlenecks</span>
-          <span class="proj-period">2026.02 – 2026.05</span>
-        </div>
-        <div class="proj-meta">Co-first author · arXiv Preprint 2026 (Under Review)</div>
-        <dl>
-          <dt>Task</dt><dd>Generating test inputs that trigger an algorithm's worst-case execution path from the natural-language specification alone, without a reference implementation.</dd>
-          <dt>Method</dt><dd>A Constraint Saturator computes the largest admissible input size from the variable relations and range constraints, and an Adversarial Scenario Injector injects input structures from 13 bottleneck scenarios.</dd>
-          <dt>Tech</dt><dd>LLM constraint interpretation, CP-SAT constraint optimization, isolated DOMjudge · Docker execution</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">K-SpecDetox: Korean Spectral Energy-based Detection and Detoxification of Dialect Profanity</span>
-          <span class="proj-period">2026.01 – 2026.05</span>
-        </div>
-        <div class="proj-meta">First author · KCC 2026 (Poster)</div>
-        <dl>
-          <dt>Task</dt><dd>Detecting profanity in Korean dialect sentences, quantifying its toxicity, and generating detoxified sentences that keep the dialect endings.</dd>
-          <dt>Method</dt><dd>Token log-probabilities are treated as a signal; FFT spectral energy and a sampling-discrepancy score feed an SVM detector. Toxicity is graded into three levels, dictionary pre-processing and level-specific prompts produce the detoxified sentence, and a spectral re-verification loop regenerates weak outputs.</dd>
-          <dt>Tech</dt><dd>FFT spectral analysis, SVM, dictionary-based pre-processing, LLM prompting</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation</span>
-          <span class="proj-period">2025.09 – 2026.02</span>
-        </div>
-        <div class="proj-meta">Co-first author · Findings of ACL 2026</div>
-        <dl>
-          <dt>Task</dt><dd>Building a benchmark that tests whether generated code actually checks its input contracts (type, range, and structure constraints).</dd>
-          <dt>Method</dt><dd>An LLM translates reference assertions into SMT-LIB constraints, an SMT solver finds inputs that violate exactly one targeted contract, and reference-code execution keeps only tests that trigger the intended violation, yielding 364 tasks.</dd>
-          <dt>Tech</dt><dd>Neuro-symbolic pipeline (LLM + Z3), HumanEval+/MBPP+, execution-based test filtering</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">K-ToPiC: Korean Dialect Toxicity Polishing with Curriculum Learning-based Span Detection</span>
-          <span class="proj-period">2025.03 – 2025.07</span>
-        </div>
-        <div class="proj-meta">Co-first author · KCC 2025 (Oral)</div>
-        <dl>
-          <dt>Task</dt><dd>Detecting profanity spans in Korean dialect sentences and polishing only those spans while preserving the dialect style.</dd>
-          <dt>Method</dt><dd>A 30,457-pair standard-to-dialect dictionary applied to KOLD yields a 28,435-sentence dialect profanity dataset; span detection is trained with a span-length curriculum, and the detected span plus a masked sentence guide the LLM to soften only the necessary expressions.</dd>
-          <dt>Tech</dt><dd>Curriculum learning, LLM fine-tuning (polyglot-ko, kullm-polyglot), detoxification generation (gemma, Bllossom)</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">MEC³O: Multi-Expert Consensus for Code Time Complexity Prediction</span>
-          <span class="proj-period">2024.12 – 2025.02</span>
-        </div>
-        <div class="proj-meta">Co-first author · arXiv Preprint 2025</div>
-        <dl>
-          <dt>Task</dt><dd>Predicting the time-complexity class of source code (O(1) to O(2<sup>n</sup>)).</dd>
-          <dt>Method</dt><dd>The best-performing LLM per complexity class is assigned as its expert with a class-specific instruction; experts exchange feedback in a structured debate, and a weighted consensus of expertise and confidence makes the final decision.</dd>
-          <dt>Tech</dt><dd>Multi-agent debate, expert role prompting, weighted consensus algorithm</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">CA-DiaL: Curriculum and Attribute-Based Learning for Korean Dialect Translation using LLMs</span>
-          <span class="proj-period">2024.08 – 2024.09</span>
-        </div>
-        <div class="proj-meta">First author · KSC 2024 (Poster)</div>
-        <dl>
-          <dt>Task</dt><dd>Training an LLM translator that converts Gyeongsang dialect sentences into standard Korean.</dd>
-          <dt>Method</dt><dd>Training data are split into three curriculum levels by the number of dialect words per sentence, and speaker gender and age-group attributes are prepended as a header so the model learns easy sentences and speaker patterns first.</dd>
-          <dt>Tech</dt><dd>QLoRA fine-tuning (Solar, KoAlpaca-Polyglot, Korean-Bllossom), AI-Hub dialect corpus</dd>
-        </dl>
-      </div>
-
-      <div class="cv-project">
-        <div class="proj-head">
-          <span class="proj-title">TCProF: Time-Complexity Prediction SSL Framework</span>
-          <span class="proj-period">2024.02 – 2024.12</span>
-        </div>
-        <div class="proj-meta">Co-author · NAACL 2025 (Oral)</div>
-        <dl>
-          <dt>Task</dt><dd>Predicting the time complexity of code in a low-resource setting with few labeled examples.</dd>
-          <dt>Method</dt><dd>Code augmentation (loop conversion, back-translation) and a symbolic module enrich the features, and two models trained on original and augmented data exchange pseudo-labels through co-training. I handled the baseline experiments and the co-training implementation.</dd>
-          <dt>Tech</dt><dd>Semi-supervised learning (co-training), AST · regex symbolic analysis, code augmentation</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section>
       <h2>Publications</h2>
-      <ul>
-        <li>
-          <strong>SLICE: Specification-Level Isolation of Contract Enforcement</strong><br/>
-          <strong>Soohan Lim</strong>, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>arXiv Preprint 2026</em>
-        </li>
-        <li>
-          <strong>STAB: Specification-driven Testing for Algorithmic Bottlenecks</strong><br/>
-          <strong>Soohan Lim</strong>*, Joonghyuk Hahn*, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>arXiv Preprint 2026</em>
-        </li>
-        <li>
-          <strong>ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation</strong><br/>
-          <strong>Soohan Lim</strong>*, Joonghyuk Hahn*, Hyunwoo Park, Sang-Ki Ko, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>Findings of ACL 2026</em>
-        </li>
-        <li>
-          <strong>K-SpecDetox: Korean Spectral Energy-based Detection and Detoxification of Dialect Profanity</strong><br/>
-          <strong>Soohan Lim</strong>, Sang-Min Choi, Yo-Sub Han<br/>
-          <em>KCC 2026 (Poster)</em>
-        </li>
-        <li>
-          <strong>MEC³O: Multi-Expert Consensus for Code Time Complexity Prediction</strong><br/>
-          Joonghyuk Hahn*, <strong>Soohan Lim</strong>*, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>arXiv Preprint 2025</em>
-        </li>
-        <li>
-          <strong>K-ToPiC: Korean Dialect Toxicity Polishing with Curriculum Learning-based Span Detection</strong><br/>
-          Jungin Kim*, <strong>Soohan Lim</strong>*, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>KCC 2025 (Oral Presentation)</em>
-        </li>
-        <li>
-          <strong>TCProF: Time-Complexity Prediction SSL Framework</strong><br/>
-          Joonghyuk Hahn, Hyeseon Ahn, Jungin Kim, <strong>Soohan Lim</strong>, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>NAACL 2025 (Oral Presentation)</em>
-        </li>
-        <li>
-          <strong>CA-DiaL: Curriculum and Attribute-Based Learning for Korean Dialect Translation using LLMs</strong><br/>
-          <strong>Soohan Lim</strong>, Joonghyuk Hahn, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup><br/>
-          <em>KSC 2024 (Poster)</em>
-        </li>
-      </ul>
+      <p class="cv-hint">Click an entry to see my role, the period, and a short summary.</p>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">SLICE: Specification-Level Isolation of Contract Enforcement</span>
+          <span class="pub-authors"><strong>Soohan Lim</strong>, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">arXiv Preprint 2026</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">First author · 2026.05 – 2026.07</p>
+          <dl>
+            <dt>Task</dt><dd>Generating code from a natural-language specification that satisfies both the functional requirements and the input contracts.</dd>
+            <dt>Method</dt><dd>The specification is structured as a graph to separate functional requirements from contract conditions. Candidate bodies from the functional view are ranked by executing specification examples; contract assertions are generated separately, screened by execution, and merged into the selected body.</dd>
+            <dt>Tech</dt><dd>Specification graph, multi-candidate LLM generation, execution-based verification, token log-probability selection</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">STAB: Specification-driven Testing for Algorithmic Bottlenecks</span>
+          <span class="pub-authors"><strong>Soohan Lim</strong>*, Joonghyuk Hahn*, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">arXiv Preprint 2026</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">Co-first author · 2026.02 – 2026.05</p>
+          <dl>
+            <dt>Task</dt><dd>Generating test inputs that trigger an algorithm's worst-case execution path from the natural-language specification alone, without a reference implementation.</dd>
+            <dt>Method</dt><dd>A Constraint Saturator computes the largest admissible input size from the variable relations and range constraints, and an Adversarial Scenario Injector injects input structures from 13 bottleneck scenarios.</dd>
+            <dt>Tech</dt><dd>LLM constraint interpretation, CP-SAT constraint optimization, isolated DOMjudge · Docker execution</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation</span>
+          <span class="pub-authors"><strong>Soohan Lim</strong>*, Joonghyuk Hahn*, Hyunwoo Park, Sang-Ki Ko, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">Findings of ACL 2026</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">Co-first author · 2025.09 – 2026.02</p>
+          <dl>
+            <dt>Task</dt><dd>Building a benchmark that tests whether generated code actually checks its input contracts (type, range, and structure constraints).</dd>
+            <dt>Method</dt><dd>An LLM translates reference assertions into SMT-LIB constraints, an SMT solver finds inputs that violate exactly one targeted contract, and reference-code execution keeps only tests that trigger the intended violation, yielding 364 tasks.</dd>
+            <dt>Tech</dt><dd>Neuro-symbolic pipeline (LLM + Z3), HumanEval+/MBPP+, execution-based test filtering</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">K-SpecDetox: Korean Spectral Energy-based Detection and Detoxification of Dialect Profanity</span>
+          <span class="pub-authors"><strong>Soohan Lim</strong>, Sang-Min Choi, Yo-Sub Han</span>
+          <span class="pub-venue">KCC 2026 (Poster)</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">First author · 2026.01 – 2026.05</p>
+          <dl>
+            <dt>Task</dt><dd>Detecting profanity in Korean dialect sentences, quantifying its toxicity, and generating detoxified sentences that keep the dialect endings.</dd>
+            <dt>Method</dt><dd>Token log-probabilities are treated as a signal; FFT spectral energy and a sampling-discrepancy score feed an SVM detector. Toxicity is graded into three levels, level-specific prompts produce the detoxified sentence, and a spectral re-verification loop regenerates weak outputs.</dd>
+            <dt>Tech</dt><dd>FFT spectral analysis, SVM, dictionary-based pre-processing, LLM prompting</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">MEC³O: Multi-Expert Consensus for Code Time Complexity Prediction</span>
+          <span class="pub-authors">Joonghyuk Hahn*, <strong>Soohan Lim</strong>*, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">arXiv Preprint 2025</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">Co-first author · 2024.12 – 2025.02</p>
+          <dl>
+            <dt>Task</dt><dd>Predicting the time-complexity class of source code (O(1) to O(2<sup>n</sup>)).</dd>
+            <dt>Method</dt><dd>The best-performing LLM per complexity class is assigned as its expert with a class-specific instruction; experts exchange feedback in a structured debate, and a weighted consensus of expertise and confidence makes the final decision.</dd>
+            <dt>Tech</dt><dd>Multi-agent debate, expert role prompting, weighted consensus algorithm</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">K-ToPiC: Korean Dialect Toxicity Polishing with Curriculum Learning-based Span Detection</span>
+          <span class="pub-authors">Jungin Kim*, <strong>Soohan Lim</strong>*, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">KCC 2025 (Oral Presentation)</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">Co-first author · 2025.03 – 2025.07</p>
+          <dl>
+            <dt>Task</dt><dd>Detecting profanity spans in Korean dialect sentences and polishing only those spans while preserving the dialect style.</dd>
+            <dt>Method</dt><dd>A 30,457-pair standard-to-dialect dictionary applied to KOLD yields a 28,435-sentence dialect profanity dataset; span detection is trained with a span-length curriculum, and the detected span plus a masked sentence guide the LLM to soften only the necessary expressions.</dd>
+            <dt>Tech</dt><dd>Curriculum learning, LLM fine-tuning (polyglot-ko, kullm-polyglot), detoxification generation (gemma, Bllossom)</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">TCProF: Time-Complexity Prediction SSL Framework</span>
+          <span class="pub-authors">Joonghyuk Hahn, Hyeseon Ahn, Jungin Kim, <strong>Soohan Lim</strong>, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">NAACL 2025 (Oral Presentation)</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">Co-author · 2024.02 – 2024.12</p>
+          <dl>
+            <dt>Task</dt><dd>Predicting the time complexity of code in a low-resource setting with few labeled examples.</dd>
+            <dt>Method</dt><dd>Code augmentation (loop conversion, back-translation) and a symbolic module enrich the features, and two models trained on original and augmented data exchange pseudo-labels through co-training. I handled the baseline experiments and the co-training implementation.</dd>
+            <dt>Tech</dt><dd>Semi-supervised learning (co-training), AST · regex symbolic analysis, code augmentation</dd>
+          </dl>
+        </div>
+      </details>
+      <details class="pub-card">
+        <summary>
+          <span class="pub-title">CA-DiaL: Curriculum and Attribute-Based Learning for Korean Dialect Translation using LLMs</span>
+          <span class="pub-authors"><strong>Soohan Lim</strong>, Joonghyuk Hahn, Hyeseon Ahn, Sang-Min Choi, Yo-Sub Han<sup>&dagger;</sup></span>
+          <span class="pub-venue">KSC 2024 (Poster)</span>
+        </summary>
+        <div class="pub-body">
+          <p class="pub-role">First author · 2024.08 – 2024.09</p>
+          <dl>
+            <dt>Task</dt><dd>Training an LLM translator that converts Gyeongsang dialect sentences into standard Korean.</dd>
+            <dt>Method</dt><dd>Training data are split into three curriculum levels by the number of dialect words per sentence, and speaker gender and age-group attributes are prepended as a header so the model learns easy sentences and speaker patterns first.</dd>
+            <dt>Tech</dt><dd>QLoRA fine-tuning (Solar, KoAlpaca-Polyglot, Korean-Bllossom), AI-Hub dialect corpus</dd>
+          </dl>
+        </div>
+      </details>
       <p class="footnote"><sup>*</sup> co-first authorship; <sup>&dagger;</sup> corresponding author. See the <a href="publications.html">Publications</a> page for links and BibTeX.</p>
-    </section>
-
-    <section>
-      <h2>Patents</h2>
-      <ol class="cv-list">
-        <li>SMT-based contract compliance evaluation apparatus and method <span class="patent-no">(KR 10-2026-0024568)</span></li>
-        <li>Multi-expert consensus code complexity prediction apparatus and method <span class="patent-no">(KR 10-2026-0010383)</span></li>
-        <li>Curriculum learning-based dialect profanity span detection and detoxification method and apparatus <span class="patent-no">(KR 10-2025-0116562)</span></li>
-        <li>LLM-based Korean dialect-to-standard conversion apparatus and method <span class="patent-no">(KR 10-2024-0151584)</span></li>
-        <li>Semi-supervised code complexity prediction apparatus and method <span class="patent-no">(KR 10-2024-0150149)</span></li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Awards</h2>
-      <ul class="cv-list">
-        <li><strong>1st Place, MJU ICT College Software Development Contest</strong>, Myongji University<br/>
-            LSTM-based stock trend prediction program</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Activities</h2>
-      <ul class="cv-list">
-        <li><strong>AI Application System Development Project Team</strong>, Myongji University
-            <span class="period">(2021.09 – 2023.09)</span><br/>
-            CNN-based sudden-acceleration assist system (Arduino); diet &amp; workout recommendation app</li>
-      </ul>
     </section>
 
     <section>
