@@ -385,6 +385,86 @@ li {
   margin-top: 1.5em;
 }
 
+.cv-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.2em;
+  margin: 0.4em 0 2em;
+  font-size: 0.95em;
+}
+
+.cv-edu li,
+.cv-list li {
+  margin-bottom: 0.7em;
+}
+
+.cv-edu .period,
+.cv-list .period {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+.cv-project {
+  margin-bottom: 1.4em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-project:last-of-type {
+  border-bottom: none;
+}
+
+.cv-project .proj-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.cv-project .proj-title {
+  font-weight: 700;
+}
+
+.cv-project .proj-meta {
+  color: var(--muted);
+  font-size: 0.92em;
+  margin: 0.1em 0 0.5em;
+}
+
+.cv-project .proj-period {
+  color: var(--muted);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.cv-project dl {
+  display: grid;
+  grid-template-columns: 4.6em 1fr;
+  gap: 0.25em 0.8em;
+  margin: 0;
+  font-size: 0.95em;
+}
+
+.cv-project dt {
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.25em;
+}
+
+.cv-project dd {
+  margin: 0;
+}
+
+.patent-no {
+  color: var(--muted);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
 .related {
   color: var(--muted);
   font-size: 0.9em;
@@ -467,6 +547,15 @@ li {
   .paper.visible {
     flex-direction: column;
     gap: 0.5em;
+  }
+
+  .cv-project dl {
+    grid-template-columns: 1fr;
+    gap: 0.1em 0;
+  }
+
+  .cv-project dd {
+    margin-bottom: 0.4em;
   }
 
   .venue-tag {
