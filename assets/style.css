@@ -227,6 +227,33 @@ li {
   font-size: 0.9em;
 }
 
+.news-toggle {
+  display: inline-block;
+  margin-top: 0.2em;
+  padding: 4px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.85em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.news-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.news-toggle::after {
+  content: " \25BE";
+}
+
+.news-toggle[aria-expanded="true"]::after {
+  content: " \25B4";
+}
+
 .tag-new {
   display: inline-block;
   background: var(--accent);
