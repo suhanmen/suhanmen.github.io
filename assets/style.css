@@ -272,10 +272,13 @@ li {
 }
 
 .paper {
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.8em;
+  padding: 0.85em 1em;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
   display: none;
+  transition: border-color 0.15s ease;
 }
 
 .paper.visible {
@@ -283,8 +286,9 @@ li {
   gap: 1.1em;
 }
 
-.paper:last-child {
-  border-bottom: none;
+.paper:hover,
+.paper:has(details[open]) {
+  border-color: var(--accent);
 }
 
 .paper-body {
@@ -337,6 +341,69 @@ li {
   font-style: italic;
   font-size: 0.95em;
   margin: 0.1em 0 0.4em;
+}
+
+.paper .pub-toggle summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 2em;
+}
+
+.paper .pub-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper .pub-toggle summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.2em;
+  top: -0.05em;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+.paper .pub-toggle[open] summary::after {
+  content: "\2212";
+}
+
+.paper .pub-toggle .authors {
+  display: block;
+}
+
+.paper .pub-body {
+  border-top: 1px solid var(--border);
+  padding: 0.6em 0 0.7em;
+  margin-bottom: 0.2em;
+  font-size: 0.93em;
+}
+
+.paper .pub-role {
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.5em;
+  font-size: 0.95em;
+}
+
+.paper .pub-body dl {
+  display: grid;
+  grid-template-columns: 4.6em 1fr;
+  gap: 0.3em 0.8em;
+  margin: 0;
+}
+
+.paper .pub-body dt {
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.2em;
+}
+
+.paper .pub-body dd {
+  margin: 0;
 }
 
 .paper .links a {
@@ -582,12 +649,14 @@ li {
     gap: 0.5em;
   }
 
-  .pub-card dl {
+  .pub-card dl,
+  .paper .pub-body dl {
     grid-template-columns: 1fr;
     gap: 0.1em 0;
   }
 
-  .pub-card dd {
+  .pub-card dd,
+  .paper .pub-body dd {
     margin-bottom: 0.4em;
   }
 
