@@ -51,7 +51,7 @@
               <span class="venue">arXiv Preprint 2026</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">First author · 2026.05 – 2026.07</p>
+              <p class="pub-role"><span class="role">First author</span><span class="period">2026.05 – 2026.07</span></p>
               <dl>
                 <dt>Task</dt><dd>Generating code from a natural-language specification that satisfies both the functional requirements and the input contracts.</dd>
                 <dt>Method</dt><dd>The specification is structured as a graph to separate functional requirements from contract conditions. Candidate bodies from the functional view are ranked by executing specification examples; contract assertions are generated separately, screened by execution, and merged into the selected body.</dd>
@@ -87,7 +87,7 @@
               <span class="venue">arXiv Preprint 2026</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">Co-first author · 2026.02 – 2026.05</p>
+              <p class="pub-role"><span class="role">Co-first author</span><span class="period">2026.02 – 2026.05</span></p>
               <dl>
                 <dt>Task</dt><dd>Generating test inputs that trigger an algorithm's worst-case execution path from the natural-language specification alone, without a reference implementation.</dd>
                 <dt>Method</dt><dd>A Constraint Saturator computes the largest admissible input size from the variable relations and range constraints, and an Adversarial Scenario Injector injects input structures from 13 bottleneck scenarios.</dd>
@@ -123,7 +123,7 @@
               <span class="venue">Findings of ACL 2026</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">Co-first author · 2025.09 – 2026.02</p>
+              <p class="pub-role"><span class="role">Co-first author</span><span class="period">2025.09 – 2026.02</span></p>
               <dl>
                 <dt>Task</dt><dd>Building a benchmark that tests whether generated code actually checks its input contracts (type, range, and structure constraints).</dd>
                 <dt>Method</dt><dd>An LLM translates reference assertions into SMT-LIB constraints, an SMT solver finds inputs that violate exactly one targeted contract, and reference-code execution keeps only tests that trigger the intended violation, yielding 364 tasks.</dd>
@@ -159,7 +159,7 @@
               <span class="venue">KCC 2026 (Poster)</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">First author · 2026.01 – 2026.05</p>
+              <p class="pub-role"><span class="role">First author</span><span class="period">2026.01 – 2026.05</span></p>
               <dl>
                 <dt>Task</dt><dd>Detecting profanity in Korean dialect sentences, quantifying its toxicity, and generating detoxified sentences that keep the dialect endings.</dd>
                 <dt>Method</dt><dd>Token log-probabilities are treated as a signal; FFT spectral energy and a sampling-discrepancy score feed an SVM detector. Toxicity is graded into three levels, level-specific prompts produce the detoxified sentence, and a spectral re-verification loop regenerates weak outputs.</dd>
@@ -190,7 +190,7 @@
               <span class="venue">arXiv Preprint 2025</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">Co-first author · 2024.12 – 2025.02</p>
+              <p class="pub-role"><span class="role">Co-first author</span><span class="period">2024.12 – 2025.02</span></p>
               <dl>
                 <dt>Task</dt><dd>Predicting the time-complexity class of source code (O(1) to O(2<sup>n</sup>)).</dd>
                 <dt>Method</dt><dd>The best-performing LLM per complexity class is assigned as its expert with a class-specific instruction; experts exchange feedback in a structured debate, and a weighted consensus of expertise and confidence makes the final decision.</dd>
@@ -226,7 +226,7 @@
               <span class="venue">KCC 2025 (Oral Presentation)</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">Co-first author · 2025.03 – 2025.07</p>
+              <p class="pub-role"><span class="role">Co-first author</span><span class="period">2025.03 – 2025.07</span></p>
               <dl>
                 <dt>Task</dt><dd>Detecting profanity spans in Korean dialect sentences and polishing only those spans while preserving the dialect style.</dd>
                 <dt>Method</dt><dd>A 30,457-pair standard-to-dialect dictionary applied to KOLD yields a 28,435-sentence dialect profanity dataset; span detection is trained with a span-length curriculum, and the detected span plus a masked sentence guide the LLM to soften only the necessary expressions.</dd>
@@ -259,7 +259,7 @@
               <span class="venue">NAACL 2025 (Oral Presentation)</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">Co-author · 2024.02 – 2024.12</p>
+              <p class="pub-role"><span class="role">Co-author</span><span class="period">2024.02 – 2024.12</span></p>
               <dl>
                 <dt>Task</dt><dd>Predicting the time complexity of code in a low-resource setting with few labeled examples.</dd>
                 <dt>Method</dt><dd>Code augmentation (loop conversion, back-translation) and a symbolic module enrich the features, and two models trained on original and augmented data exchange pseudo-labels through co-training. I handled the baseline experiments and the co-training implementation.</dd>
@@ -307,7 +307,7 @@
               <span class="venue">KSC 2024 (Poster)</span>
             </summary>
             <div class="pub-body">
-              <p class="pub-role">First author · 2024.08 – 2024.09</p>
+              <p class="pub-role"><span class="role">First author</span><span class="period">2024.08 – 2024.09</span></p>
               <dl>
                 <dt>Task</dt><dd>Training an LLM translator that converts Gyeongsang dialect sentences into standard Korean.</dd>
                 <dt>Method</dt><dd>Training data are split into three curriculum levels by the number of dialect words per sentence, and speaker gender and age-group attributes are prepended as a header so the model learns easy sentences and speaker patterns first.</dd>
