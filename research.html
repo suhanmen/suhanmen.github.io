@@ -33,66 +33,166 @@
   <main class="container">
     <h1>Research</h1>
     <p>
-      My work centers on enhancing the reliability and efficiency of programs with large language
-      models (LLMs) — reasoning about the algorithmic properties of code, generating specification-aware
-      tests that expose real bottlenecks and contract violations, and producing code that satisfies its
-      specification.
-      Below are the main directions I work on, with related publications listed on the
-      <a href="publications.html">Publications</a> page.
+      My work centers on enhancing the <strong>reliability</strong> and <strong>efficiency</strong> of programs
+      with large language models (LLMs). Neither property can be judged from a program's final output alone,
+      so every project pairs an LLM that interprets the natural-language specification with deterministic
+      rules, constraint solvers, and actual execution that verify the result. The projects below form two
+      lanes that each move from <em>predicting or measuring</em> a property to <em>exposing or enforcing</em> it.
     </p>
 
-    <figure class="mindmap-figure">
-      <img class="research-map" src="assets/research-map.svg" alt="Research map: LLM Research branches into Code Efficiency (Time Complexity Prediction → TCProF, MEC³O; Test Case Generation → STAB, ContractEval), Code Generation (Contract Enforcement → SLICE, ContractEval), Multi-Agent System (Multi-Agent Debate → MEC³O), and Korean NLP (Dialect Hate Speech → K-SpecDetox, K-ToPiC; Dialect Translation → CA-DiaL)." />
-      <figcaption>Research map — categories, topics, and related papers.</figcaption>
+    <figure class="flow-figure">
+      <div class="flow-scroll">
+      <svg class="research-flow" viewBox="0 0 910 334" role="img" aria-labelledby="flow-title flow-desc">
+      <title id="flow-title">Research flow</title>
+      <desc id="flow-desc">Two lanes over time. Efficiency: TCProF (2024) predicts cost with few labels, MEC³O (2025) predicts cost via multi-expert consensus, STAB (2026) generates inputs that expose bottlenecks. Reliability: ContractEval (2025–26) measures contract compliance, SLICE (2026) enforces it. Both lanes converge on specification-driven, execution-verified methods built on a neuro-symbolic approach.</desc>
+      <defs>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" class="flow-arrowhead" />
+        </marker>
+      </defs>
+
+      <!-- year axis -->
+      <text x="150" y="22" class="year-label">2024</text>
+      <line x1="150" y1="30" x2="150" y2="266" class="year-grid" />
+      <text x="335" y="22" class="year-label">2025</text>
+      <line x1="335" y1="30" x2="335" y2="266" class="year-grid" />
+      <text x="520" y="22" class="year-label">2025–26</text>
+      <line x1="520" y1="30" x2="520" y2="266" class="year-grid" />
+      <text x="705" y="22" class="year-label">2026</text>
+      <line x1="705" y1="30" x2="705" y2="266" class="year-grid" />
+
+      <!-- lanes -->
+      <rect x="20" y="48" width="770" height="102" rx="10" class="lane" />
+      <path d="M30 48 H48 V150 H30 a10 10 0 0 1 -10 -10 V58 a10 10 0 0 1 10 -10 z" class="lane-gutter" />
+      <text transform="translate(38 99) rotate(-90)" class="lane-title">EFFICIENCY</text>
+      <rect x="20" y="160" width="770" height="102" rx="10" class="lane" />
+      <path d="M30 160 H48 V262 H30 a10 10 0 0 1 -10 -10 V170 a10 10 0 0 1 10 -10 z" class="lane-gutter" />
+      <text transform="translate(38 211) rotate(-90)" class="lane-title">RELIABILITY</text>
+
+      <!-- efficiency lane -->
+      <line x1="216.0" y1="105" x2="269.0" y2="105" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="242" y="73" class="arrow-label">few labels → expert consensus</text>
+      <line x1="401.0" y1="105" x2="639.0" y2="105" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="520" y="73" class="arrow-label">predict cost → expose it by execution</text>
+      <a href="https://arxiv.org/abs/2502.15749" target="_blank" class="flow-node">
+        <rect x="84" y="81" width="132" height="48" rx="9" />
+        <text x="150" y="101" class="node-name">TCProF</text>
+        <text x="150" y="118" class="node-sub">predict cost · co-training</text>
+      </a>
+      <a href="https://arxiv.org/abs/2510.09049" target="_blank" class="flow-node">
+        <rect x="269" y="81" width="132" height="48" rx="9" />
+        <text x="335" y="101" class="node-name">MEC³O</text>
+        <text x="335" y="118" class="node-sub">predict cost · expert debate</text>
+      </a>
+      <a href="https://arxiv.org/abs/2605.27981" target="_blank" class="flow-node">
+        <rect x="639" y="81" width="132" height="48" rx="9" />
+        <text x="705" y="101" class="node-name">STAB</text>
+        <text x="705" y="118" class="node-sub">expose bottlenecks by tests</text>
+      </a>
+
+      <!-- reliability lane -->
+      <line x1="586.0" y1="217" x2="639.0" y2="217" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="612" y="185" class="arrow-label">measure → enforce</text>
+      <a href="https://arxiv.org/abs/2510.12047" target="_blank" class="flow-node">
+        <rect x="454" y="193" width="132" height="48" rx="9" />
+        <text x="520" y="213" class="node-name">ContractEval</text>
+        <text x="520" y="230" class="node-sub">measure contract compliance</text>
+      </a>
+      <a href="https://arxiv.org/abs/2608.21483" target="_blank" class="flow-node">
+        <rect x="639" y="193" width="132" height="48" rx="9" />
+        <text x="705" y="213" class="node-name">SLICE</text>
+        <text x="705" y="230" class="node-sub">generate contract-safe code</text>
+      </a>
+
+      <!-- convergence -->
+      <line x1="771" y1="105" x2="803" y2="139" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <line x1="771" y1="217" x2="803" y2="171" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <rect x="805" y="113" width="96" height="84" rx="10" class="converge" />
+      <text x="853" y="135" class="converge-title">Specification-</text>
+      <text x="853" y="149" class="converge-title">driven,</text>
+      <text x="853" y="163" class="converge-title">execution-</text>
+      <text x="853" y="177" class="converge-title">verified</text>
+
+      <!-- common method -->
+      <rect x="20" y="278" width="881" height="46" rx="10" class="method-band" />
+      <text x="34" y="297" class="method-title">COMMON METHOD · NEURO-SYMBOLIC</text>
+      <text x="34" y="313" class="method-text">LLMs interpret the natural-language specification; deterministic rules, constraint solvers, and actual execution do the structuring and verification.</text>
+      </svg>
+      </div>
+      <figcaption>How the projects connect: two lanes that each move from predicting or measuring a property to exposing or enforcing it, converging on specification-driven, execution-verified methods. Click a box to open the paper.</figcaption>
     </figure>
 
-    <section>
-      <h2>Time Complexity Prediction</h2>
+    <section class="lane-section">
+      <h2>Efficiency: from predicting cost to exposing bottlenecks</h2>
       <p>
-        Predicting and formally analyzing the time complexity of programs, including semi-supervised
-        learning in low-resource settings and multi-expert consensus approaches.
+        Efficiency asks how much computation a program needs and where its bottlenecks arise. I started by
+        predicting the answer and moved toward generating the inputs that make it observable.
       </p>
-      <p class="related">Related: <a href="https://arxiv.org/abs/2510.09049" target="_blank">MEC³O</a> (arXiv'25), <a href="https://arxiv.org/abs/2502.15749" target="_blank">TCProF</a> (NAACL'25).</p>
+      <ol class="lane-steps">
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2502.15749" target="_blank">TCProF</a> <span class="step-venue">NAACL 2025</span></span>
+          Predicts time complexity with few labeled examples, using code augmentation and a symbolic module
+          inside a co-training loop.
+        </li>
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2510.09049" target="_blank">MEC³O</a> <span class="step-venue">arXiv 2025</span></span>
+          Replaces a single predictor with per-class expert LLMs that debate and reach a weighted consensus,
+          improving prediction without new labels.
+        </li>
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2605.27981" target="_blank">STAB</a> <span class="step-venue">arXiv 2026</span></span>
+          Goes beyond prediction: from the specification alone it generates inputs that trigger the
+          worst-case path, so inefficiency is verified by running the program rather than estimated.
+        </li>
+      </ol>
     </section>
 
-    <section>
-      <h2>Specification-driven Test Generation</h2>
+    <section class="lane-section">
+      <h2>Reliability: from measuring contract compliance to enforcing it</h2>
       <p>
-        Generating specification-aware test cases with LLMs — exposing algorithmic bottlenecks and
-        checking whether generated code enforces input preconditions (contracts), often through
-        neuro-symbolic LLM&ndash;SMT pipelines.
+        Reliability asks whether generated code satisfies not only the required functionality but also the
+        input contracts written into the specification. I first built a way to measure this, then a way to improve it.
       </p>
-      <p class="related">Related: <a href="https://arxiv.org/abs/2605.27981" target="_blank">STAB</a> (arXiv'26), <a href="https://arxiv.org/abs/2510.12047" target="_blank">ContractEval</a> (ACL'26).</p>
+      <ol class="lane-steps">
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2510.12047" target="_blank">ContractEval</a> <span class="step-venue">Findings of ACL 2026</span></span>
+          A benchmark that checks whether generated code rejects contract-violating inputs, built with an
+          LLM–SMT pipeline that synthesizes one violating input per contract and keeps only tests confirmed by execution.
+        </li>
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2608.21483" target="_blank">SLICE</a> <span class="step-venue">arXiv 2026</span></span>
+          A generation method that isolates contract enforcement from functional implementation at the
+          specification level, selecting candidates by execution and screening assertions before merging them.
+        </li>
+      </ol>
     </section>
 
-    <section>
-      <h2>Contract-Satisfying Code Generation</h2>
+    <section class="lane-section">
+      <h2>How the lanes connect</h2>
       <p>
-        Generating code that both implements the required functionality and enforces the input
-        contract embedded in the problem specification — isolating contract enforcement from
-        functional implementation through graph-based specification structuring, execution-based
-        candidate selection, and screened input-validation assertions.
+        STAB and SLICE both start from the same object, the natural-language specification, and both let
+        execution be the judge: STAB runs the program on generated inputs, SLICE runs candidate bodies and
+        assertions on specification examples. ContractEval supplies the evaluation setting that SLICE improves on.
+        Across all five projects the division of labor is the same: the LLM handles interpretation, and
+        structuring plus verification are delegated to rules, solvers, and execution.
       </p>
-      <p class="related">Related: <a href="https://arxiv.org/abs/2608.21483" target="_blank">SLICE</a> (arXiv'26), <a href="https://arxiv.org/abs/2510.12047" target="_blank">ContractEval</a> (ACL'26).</p>
     </section>
 
-    <section>
-      <h2>Multi-agent Debate &amp; Reasoning</h2>
+    <section class="lane-section side-track">
+      <h2>Applied track: Korean dialect NLP</h2>
       <p>
-        Frameworks in which multiple LLM agents debate to improve reasoning, validation, and
-        decision-making for program analysis tasks.
+        Alongside the main line, I work on Korean dialect toxicity and translation. These projects share the
+        same habit of pairing LLMs with explicit structure: curriculum schedules, spectral features, and
+        dictionary-based pre-processing.
       </p>
-      <p class="related">Related: <a href="https://arxiv.org/abs/2510.09049" target="_blank">MEC³O</a> (arXiv'25).</p>
+      <p class="related">
+        <a href="publications.html">K-SpecDetox</a> (KCC'26) ·
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" target="_blank">K-ToPiC</a> (KCC'25) ·
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" target="_blank">CA-DiaL</a> (KSC'24)
+      </p>
     </section>
 
-    <section>
-      <h2>Korean NLP</h2>
-      <p>
-        Detection and detoxification of Korean dialect toxicity, and dialect translation with
-        curriculum- and attribute-based learning.
-      </p>
-      <p class="related">Related: <a href="publications.html">K-SpecDetox</a> (KCC'26), <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318251" target="_blank">K-ToPiC</a> (KCC'25), <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12041962" target="_blank">CA-DiaL</a> (KSC'24).</p>
-    </section>
+    <p class="footnote">Links, BibTeX, and per-paper summaries are on the <a href="publications.html">Publications</a> page.</p>
   </main>
 
 </body>

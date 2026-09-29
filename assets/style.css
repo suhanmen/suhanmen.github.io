@@ -542,23 +542,185 @@ li {
   margin: -0.2em 0 1em;
 }
 
-/* ---------- Research map ---------- */
-.mindmap-figure {
+/* ---------- Research flow ---------- */
+.flow-figure {
   margin: 0 0 2.6em;
-  text-align: center;
 }
 
-.mindmap-figure .research-map {
-  max-width: 100%;
-  height: auto;
+.flow-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.research-flow {
   display: block;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 700px;
+  height: auto;
+  font-family: inherit;
 }
 
-.mindmap-figure figcaption {
+.research-flow .year-label {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+
+.research-flow .year-grid {
+  stroke: var(--border);
+  stroke-dasharray: 3 4;
+}
+
+.research-flow .lane {
+  fill: #f6f8fb;
+}
+
+.research-flow .lane-gutter {
+  fill: var(--accent);
+}
+
+.research-flow .lane-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.research-flow .flow-node rect {
+  fill: #fff;
+  stroke: var(--accent);
+  stroke-width: 1.3;
+  transition: fill 0.15s ease;
+}
+
+.research-flow .flow-node:hover rect {
+  fill: #e4ecf5;
+}
+
+.research-flow .node-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  fill: var(--text);
+  text-anchor: middle;
+}
+
+.research-flow .node-sub {
+  font-size: 8.8px;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+
+.research-flow .flow-arrow {
+  stroke: #9aaabb;
+  stroke-width: 1.4;
+}
+
+.research-flow .flow-arrowhead {
+  fill: #9aaabb;
+}
+
+.research-flow .arrow-label {
+  font-size: 8.8px;
+  font-style: italic;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+
+.research-flow .converge {
+  fill: var(--accent);
+}
+
+.research-flow .converge-title {
+  font-size: 11px;
+  font-weight: 700;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.research-flow .method-band {
+  fill: #eef1f4;
+}
+
+.research-flow .method-title {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  fill: #5b6b7a;
+}
+
+.research-flow .method-text {
+  font-size: 9.6px;
+  fill: #3b4452;
+}
+
+.flow-figure figcaption {
   color: var(--muted);
   font-size: 0.85em;
-  margin-top: 0.6em;
+  margin-top: 0.7em;
+}
+
+.lane-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0.4em 0 0;
+  counter-reset: step;
+}
+
+.lane-steps li {
+  position: relative;
+  padding: 0.55em 0 0.55em 2.4em;
+  margin: 0;
+  border-left: 2px solid var(--border);
+  margin-left: 0.85em;
+}
+
+.lane-steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: -0.95em;
+  top: 0.65em;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lane-steps .step-name {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.1em;
+}
+
+.lane-steps .step-venue {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-left: 0.3em;
+}
+
+.side-track {
+  padding: 1em 1.2em;
+  background: #f6f8fb;
+  border-radius: 10px;
+}
+
+.side-track h2 {
+  border-bottom: none;
+  margin-bottom: 0.4em;
+  font-size: 1.1em;
+}
+
+.side-track p:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- Contact ---------- */
