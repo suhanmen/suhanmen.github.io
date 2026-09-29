@@ -66,69 +66,72 @@
         </p>
       </section>
 
-      <section id="highlights">
-        <h2>Highlights</h2>
-        <div class="highlight-grid">
-          <a class="highlight-card" href="https://arxiv.org/abs/2608.21483" target="_blank" rel="noopener">
-            <span class="venue-tag tag-preprint">arXiv 2026</span>
-            <span class="highlight-title">SLICE</span>
-            <span class="highlight-desc">Generates code that satisfies both functionality and input contracts by isolating contract enforcement at the specification level.</span>
+      <section id="news">
+        <div class="news-head">
+          <h2>Recent News</h2>
+          <div class="news-nav">
+            <button type="button" class="news-arrow" data-dir="-1" onclick="scrollNews(-1)" aria-label="Previous news">&#8249;</button>
+            <button type="button" class="news-arrow" data-dir="1" onclick="scrollNews(1)" aria-label="Next news">&#8250;</button>
+          </div>
+        </div>
+        <div class="news-strip" id="news-strip">
+          <a class="news-card" href="https://arxiv.org/abs/2608.21483" target="_blank" rel="noopener">
+            <span class="news-meta"><span class="news-date">Aug 2026</span><span class="venue-tag tag-preprint">Preprint</span></span>
+            <span class="news-title">SLICE</span>
+            <span class="news-desc">Specification-Level Isolation of Contract Enforcement is now on arXiv.</span>
           </a>
-          <a class="highlight-card" href="https://arxiv.org/abs/2605.27981" target="_blank" rel="noopener">
-            <span class="venue-tag tag-preprint">arXiv 2026</span>
-            <span class="highlight-title">STAB</span>
-            <span class="highlight-desc">Generates test inputs from the specification alone that trigger an algorithm's worst-case execution path.</span>
+          <a class="news-card" href="publications.html">
+            <span class="news-meta"><span class="news-date">Jun 2026</span><span class="venue-tag tag-peer">Accepted</span></span>
+            <span class="news-title">K-SpecDetox</span>
+            <span class="news-desc">Accepted to KCC 2026 as a poster.</span>
           </a>
-          <a class="highlight-card" href="https://arxiv.org/abs/2510.12047" target="_blank" rel="noopener">
-            <span class="venue-tag tag-peer">ACL 2026</span>
-            <span class="highlight-title">ContractEval</span>
-            <span class="highlight-desc">A benchmark that measures whether generated code actually rejects contract-violating inputs.</span>
+          <a class="news-card" href="https://arxiv.org/abs/2605.27981" target="_blank" rel="noopener">
+            <span class="news-meta"><span class="news-date">May 2026</span><span class="venue-tag tag-preprint">Preprint</span></span>
+            <span class="news-title">STAB</span>
+            <span class="news-desc">Specification-driven Testing for Algorithmic Bottlenecks is now on arXiv.</span>
+          </a>
+          <a class="news-card" href="https://arxiv.org/abs/2510.12047" target="_blank" rel="noopener">
+            <span class="news-meta"><span class="news-date">Jan 2026</span><span class="venue-tag tag-peer">Accepted</span></span>
+            <span class="news-title">ContractEval</span>
+            <span class="news-desc">Accepted to Findings of ACL 2026.</span>
+          </a>
+          <a class="news-card" href="https://arxiv.org/abs/2510.09049" target="_blank" rel="noopener">
+            <span class="news-meta"><span class="news-date">Oct 2025</span><span class="venue-tag tag-preprint">Preprint</span></span>
+            <span class="news-title">MEC³O</span>
+            <span class="news-desc">Multi-Expert Consensus for Code Time Complexity Prediction is now on arXiv.</span>
+          </a>
+          <a class="news-card" href="https://aclanthology.org/2025.naacl-long.482/" target="_blank" rel="noopener">
+            <span class="news-meta"><span class="news-date">Apr 2025</span><span class="venue-tag tag-peer">Oral</span></span>
+            <span class="news-title">TCProF</span>
+            <span class="news-desc">Presented at NAACL 2025 as an oral paper.</span>
           </a>
         </div>
-      </section>
-
-      <section id="news">
-        <h2>Recent News</h2>
-        <ul id="news-list">
-          <li>
-            preprint: "SLICE: Specification-Level Isolation of Contract Enforcement" is available on arXiv.
-            <span class="news-date">(Aug 2026)</span>
-          </li>
-          <li>
-            Our paper "K-SpecDetox" has been accepted to KCC 2026 (Poster).
-            <span class="news-date">(Jun 2026)</span>
-          </li>
-          <li>
-            preprint: "STAB: Specification-driven Testing for Algorithmic Bottlenecks" is available on arXiv.
-            <span class="news-date">(May 2026)</span>
-          </li>
-          <li class="news-more" hidden>
-            Our paper "ContractEval" has been accepted to Findings of ACL 2026.
-            <span class="news-date">(Jan 2026)</span>
-          </li>
-          <li class="news-more" hidden>
-            preprint: "MEC³O: Multi-Expert Consensus for Code Time Complexity Prediction" is available on arXiv.
-            <span class="news-date">(Oct 2025)</span>
-          </li>
-          <li class="news-more" hidden>
-            Our paper "TCProF" was presented at NAACL 2025 (Oral).
-            <span class="news-date">(Apr 2025)</span>
-          </li>
-        </ul>
-        <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" onclick="toggleNews()">Show 3 more</button>
       </section>
 
       <p class="last-updated">Last updated: September 2026</p>
     </main>
   </div>
   <script>
-    function toggleNews() {
-      const btn = document.getElementById('news-toggle');
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('#news-list .news-more').forEach(li => { li.hidden = open; });
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.textContent = open ? 'Show ' + document.querySelectorAll('#news-list .news-more').length + ' more' : 'Show less';
+    function scrollNews(dir) {
+      const strip = document.getElementById('news-strip');
+      const card = strip.querySelector('.news-card');
+      const step = card ? card.getBoundingClientRect().width + 14 : strip.clientWidth * 0.8;
+      strip.scrollBy({ left: dir * step, behavior: 'smooth' });
     }
+    (function () {
+      const strip = document.getElementById('news-strip');
+      const prev = document.querySelector('.news-arrow[data-dir="-1"]');
+      const next = document.querySelector('.news-arrow[data-dir="1"]');
+      function update() {
+        const max = strip.scrollWidth - strip.clientWidth - 1;
+        prev.disabled = strip.scrollLeft <= 0;
+        next.disabled = strip.scrollLeft >= max;
+        strip.classList.toggle('at-end', strip.scrollLeft >= max);
+      }
+      strip.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
 </body>
 </html>
