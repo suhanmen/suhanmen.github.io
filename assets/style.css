@@ -274,8 +274,9 @@ li {
 }
 
 .news-tag.tag-accepted {
-  background: var(--accent);
-  color: #fff;
+  background: #e4f4ea;
+  color: #1a6b3c;
+  box-shadow: inset 0 0 0 1px #bfe3cc;
 }
 
 /* ---------- Publications ---------- */
