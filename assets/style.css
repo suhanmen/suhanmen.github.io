@@ -273,6 +273,12 @@ li {
   color: #5b6b7a;
 }
 
+.news-tag.tag-new {
+  min-width: 0;
+  background: var(--accent);
+  color: #fff;
+}
+
 .news-tag.tag-accepted {
   background: #e4f4ea;
   color: #1a6b3c;

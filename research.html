@@ -151,7 +151,9 @@
       <h2>Reliability: from measuring contract compliance to enforcing it</h2>
       <p>
         Reliability asks whether generated code satisfies not only the required functionality but also the
-        input contracts written into the specification. I first built a way to measure this, then a way to improve it.
+        input contracts written into the specification. I first built a way to measure this, then a way to improve it,
+        and most recently a way to establish where generated code came from, since code that cannot be traced to its
+        source cannot be trusted either.
       </p>
       <ol class="lane-steps">
         <li>
@@ -164,6 +166,12 @@
           A generation method that isolates contract enforcement from functional implementation at the
           specification level, selecting candidates by execution and screening assertions before merging them.
         </li>
+        <li>
+          <span class="step-name"><a href="https://arxiv.org/abs/2609.39414" target="_blank">SEW</a> <span class="step-venue">arXiv 2026</span></span>
+          A provenance method that watermarks already generated code by choosing among equivalent code styles
+          with a secret key, leaving functionality untouched, and detects the watermark with evidence calibrated
+          against human style preferences and aggregated by structural context.
+        </li>
       </ol>
     </section>
 
@@ -173,22 +181,10 @@
         STAB and SLICE both start from the same object, the natural-language specification, and both let
         execution be the judge: STAB runs the program on generated inputs, SLICE runs candidate bodies and
         assertions on specification examples. ContractEval supplies the evaluation setting that SLICE improves on.
-        Across all five projects the division of labor is the same: the LLM handles interpretation, and
+        SEW extends the reliability lane from what the code does to where it came from, and it keeps the same
+        habit: explicit style rules do the embedding, and calibrated evidence does the verification.
+        Across all six projects the division of labor is the same: the LLM handles interpretation, and
         structuring plus verification are delegated to rules, solvers, and execution.
-      </p>
-    </section>
-
-    <section class="lane-section side-track">
-      <h2>New direction: provenance of LLM-generated code</h2>
-      <p>
-        Reliability also means knowing where code came from. SEW watermarks already generated code by
-        choosing among equivalent code styles with a secret key, so functionality is untouched, and
-        detects the watermark with evidence calibrated against human style preferences and aggregated
-        by structural context. It keeps the same division of labor as the main lanes: explicit rules
-        and structure do the embedding and verification.
-      </p>
-      <p class="related">
-        <a href="https://arxiv.org/abs/2609.39414" target="_blank">SEW</a> (arXiv 2026)
       </p>
     </section>
 
