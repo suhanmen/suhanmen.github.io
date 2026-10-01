@@ -56,6 +56,9 @@
         four as first author including equal contributions, moving from cost prediction
         (TCProF, MEC³O) to bottleneck-exposing tests (STAB), and from functional-correctness evaluation
         to specification-compliance evaluation (ContractEval) and improvement (SLICE).
+        Most recently I extended the same execution-aware view to provenance: SEW watermarks
+        already generated code through keyed code-style choices and detects them with
+        calibrated, context-aware evidence.
       </p>
     </section>
 
@@ -76,14 +79,34 @@
       <h3>Theory of Computation Lab, Yonsei University</h3>
       <ul>
         <li>Graduate Researcher (2024–Present), advised by Prof. Yo-Sub Han. Leading projects on
-            specification-driven test generation, contract-satisfying code generation, and
-            time complexity prediction with LLMs.</li>
+            specification-driven test generation, contract-satisfying code generation,
+            time complexity prediction, and code watermarking with LLMs.</li>
       </ul>
     </section>
 
     <section>
       <h2>Publications</h2>
       <p class="cv-hint">Click an entry to see my role, the period, and a short summary.</p>
+      <div class="paper visible">
+        <span class="venue-tag tag-preprint">arXiv</span>
+        <div class="paper-body">
+          <details class="pub-toggle">
+            <summary>
+              <span class="title">SEW: Style-Encoded Watermarking of LLM-Generated Code</span>
+              <span class="authors"><span class="me">Soohan Lim</span>, Hyundong Jin, Yo-Sub Han<sup>&dagger;</sup></span>
+              <span class="venue">arXiv Preprint 2026</span>
+            </summary>
+            <div class="pub-body">
+              <p class="pub-role"><span class="role">First author</span><span class="period">2026.07 – 2026.09</span></p>
+              <dl>
+                <dt>Task</dt><dd>Embedding and detecting a watermark in already generated code for provenance tracking, without hurting functional correctness and without false detections on human-written code.</dd>
+                <dt>Method</dt><dd>Code style rules collected from style guides and transformation rules are applied with style choices fixed by a secret key and each program's structural context. Detection calibrates watermark evidence with style probabilities estimated from human-written code and aggregates evidence across structurally matching locations so repeated choices cannot inflate it.</dd>
+                <dt>Tech</dt><dd>Style-rule transformations, keyed style selection, style-preference calibration, context-aware evidence aggregation; CodeContests across three LLMs and three languages</dd>
+              </dl>
+            </div>
+          </details>
+        </div>
+      </div>
       <div class="paper visible">
         <span class="venue-tag tag-preprint">arXiv</span>
         <div class="paper-body">
@@ -263,7 +286,7 @@
       Email: <a href="mailto:emmous@yonsei.ac.kr">emmous@yonsei.ac.kr</a></p>
     </section>
 
-    <p class="last-updated">Last updated: September 2026</p>
+    <p class="last-updated">Last updated: October 2026</p>
   </main>
 </body>
 </html>
