@@ -42,84 +42,93 @@
 
     <figure class="flow-figure">
       <div class="flow-scroll">
-      <svg class="research-flow" viewBox="0 0 910 334" role="img" aria-labelledby="flow-title flow-desc">
+      <svg class="research-flow" viewBox="0 0 1140 436" role="img" aria-labelledby="flow-title flow-desc">
       <title id="flow-title">Research flow</title>
-      <desc id="flow-desc">Two lanes over time. Efficiency: TCProF (2024) predicts cost with few labels, MEC³O (2025) predicts cost via multi-expert consensus, STAB (2026) generates inputs that expose bottlenecks. Reliability: ContractEval (2025–26) measures contract compliance, SLICE (2026) enforces it. Both lanes converge on specification-driven, execution-verified methods built on a neuro-symbolic approach.</desc>
+      <desc id="flow-desc">Two lanes over time. Efficiency: TCProF (2024) predicts cost with few labels, MEC³O (2025) predicts cost via multi-expert consensus, STAB (2026) generates inputs that expose bottlenecks. Reliability: ContractEval (2025–26) measures contract compliance, SLICE (2026) enforces it, and the generated code is handed to SEW (late 2026), which watermarks it so its provenance can be traced. Both lanes converge on specification-driven, execution-verified methods built on a neuro-symbolic approach.</desc>
       <defs>
-        <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" class="flow-arrowhead" />
         </marker>
       </defs>
 
       <!-- year axis -->
-      <text x="150" y="22" class="year-label">2024</text>
-      <line x1="150" y1="30" x2="150" y2="266" class="year-grid" />
-      <text x="335" y="22" class="year-label">2025</text>
-      <line x1="335" y1="30" x2="335" y2="266" class="year-grid" />
-      <text x="520" y="22" class="year-label">2025–26</text>
-      <line x1="520" y1="30" x2="520" y2="266" class="year-grid" />
-      <text x="705" y="22" class="year-label">2026</text>
-      <line x1="705" y1="30" x2="705" y2="266" class="year-grid" />
+      <text x="150" y="26" class="year-label">2024</text>
+      <line x1="150" y1="36" x2="150" y2="354" class="year-grid" />
+      <text x="340" y="26" class="year-label">2025</text>
+      <line x1="340" y1="36" x2="340" y2="354" class="year-grid" />
+      <text x="530" y="26" class="year-label">2025–26</text>
+      <line x1="530" y1="36" x2="530" y2="354" class="year-grid" />
+      <text x="720" y="26" class="year-label">2026</text>
+      <line x1="720" y1="36" x2="720" y2="354" class="year-grid" />
+      <text x="910" y="26" class="year-label">late 2026</text>
+      <line x1="910" y1="36" x2="910" y2="354" class="year-grid" />
 
       <!-- lanes -->
-      <rect x="20" y="48" width="770" height="102" rx="10" class="lane" />
-      <path d="M30 48 H48 V150 H30 a10 10 0 0 1 -10 -10 V58 a10 10 0 0 1 10 -10 z" class="lane-gutter" />
-      <text transform="translate(38 99) rotate(-90)" class="lane-title">EFFICIENCY</text>
-      <rect x="20" y="160" width="770" height="102" rx="10" class="lane" />
-      <path d="M30 160 H48 V262 H30 a10 10 0 0 1 -10 -10 V170 a10 10 0 0 1 10 -10 z" class="lane-gutter" />
-      <text transform="translate(38 211) rotate(-90)" class="lane-title">RELIABILITY</text>
+      <rect x="20" y="56" width="988" height="140" rx="12" class="lane" />
+      <path d="M32 56 H50 V196 H32 a12 12 0 0 1 -12 -12 V68 a12 12 0 0 1 12 -12 z" class="lane-gutter" />
+      <text transform="translate(39 126) rotate(-90)" class="lane-title">EFFICIENCY</text>
+      <rect x="20" y="210" width="988" height="140" rx="12" class="lane" />
+      <path d="M32 210 H50 V350 H32 a12 12 0 0 1 -12 -12 V222 a12 12 0 0 1 12 -12 z" class="lane-gutter" />
+      <text transform="translate(39 280) rotate(-90)" class="lane-title">RELIABILITY</text>
 
       <!-- efficiency lane -->
-      <line x1="216.0" y1="105" x2="269.0" y2="105" class="flow-arrow" marker-end="url(#arrowhead)" />
-      <text x="242" y="73" class="arrow-label">few labels → expert consensus</text>
-      <line x1="401.0" y1="105" x2="639.0" y2="105" class="flow-arrow" marker-end="url(#arrowhead)" />
-      <text x="520" y="73" class="arrow-label">predict cost → expose it by execution</text>
+      <line x1="228" y1="126" x2="262" y2="126" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="245" y="84" class="arrow-label">few labels → expert consensus</text>
+      <line x1="418" y1="126" x2="642" y2="126" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="530" y="84" class="arrow-label">predict cost → expose it by execution</text>
       <a href="https://arxiv.org/abs/2502.15749" target="_blank" class="flow-node">
-        <rect x="84" y="81" width="132" height="48" rx="9" />
-        <text x="150" y="101" class="node-name">TCProF</text>
-        <text x="150" y="118" class="node-sub">predict cost · co-training</text>
+        <rect x="72" y="94" width="156" height="64" rx="10" />
+        <text x="150" y="121" class="node-name">TCProF</text>
+        <text x="150" y="143" class="node-sub">predict cost · SSL</text>
       </a>
       <a href="https://arxiv.org/abs/2510.09049" target="_blank" class="flow-node">
-        <rect x="269" y="81" width="132" height="48" rx="9" />
-        <text x="335" y="101" class="node-name">MEC³O</text>
-        <text x="335" y="118" class="node-sub">predict cost · expert debate</text>
+        <rect x="262" y="94" width="156" height="64" rx="10" />
+        <text x="340" y="121" class="node-name">MEC³O</text>
+        <text x="340" y="143" class="node-sub">predict cost · debate</text>
       </a>
       <a href="https://arxiv.org/abs/2605.27981" target="_blank" class="flow-node">
-        <rect x="639" y="81" width="132" height="48" rx="9" />
-        <text x="705" y="101" class="node-name">STAB</text>
-        <text x="705" y="118" class="node-sub">expose bottlenecks by tests</text>
+        <rect x="642" y="94" width="156" height="64" rx="10" />
+        <text x="720" y="121" class="node-name">STAB</text>
+        <text x="720" y="143" class="node-sub">expose bottlenecks</text>
       </a>
 
       <!-- reliability lane -->
-      <line x1="586.0" y1="217" x2="639.0" y2="217" class="flow-arrow" marker-end="url(#arrowhead)" />
-      <text x="612" y="185" class="arrow-label">measure → enforce</text>
+      <line x1="608" y1="280" x2="642" y2="280" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <text x="625" y="238" class="arrow-label">measure → enforce</text>
+      <line x1="798" y1="280" x2="832" y2="280" class="flow-arrow flow-arrow-handoff" marker-end="url(#arrowhead)" />
+      <text x="815" y="333" class="arrow-label">generated code → traceable code</text>
       <a href="https://arxiv.org/abs/2510.12047" target="_blank" class="flow-node">
-        <rect x="454" y="193" width="132" height="48" rx="9" />
-        <text x="520" y="213" class="node-name">ContractEval</text>
-        <text x="520" y="230" class="node-sub">measure contract compliance</text>
+        <rect x="452" y="248" width="156" height="64" rx="10" />
+        <text x="530" y="275" class="node-name">ContractEval</text>
+        <text x="530" y="297" class="node-sub">measure compliance</text>
       </a>
       <a href="https://arxiv.org/abs/2608.21483" target="_blank" class="flow-node">
-        <rect x="639" y="193" width="132" height="48" rx="9" />
-        <text x="705" y="213" class="node-name">SLICE</text>
-        <text x="705" y="230" class="node-sub">generate contract-safe code</text>
+        <rect x="642" y="248" width="156" height="64" rx="10" />
+        <text x="720" y="275" class="node-name">SLICE</text>
+        <text x="720" y="297" class="node-sub">enforce contracts</text>
+      </a>
+      <a href="https://arxiv.org/abs/2609.39414" target="_blank" class="flow-node">
+        <rect x="832" y="248" width="156" height="64" rx="10" />
+        <text x="910" y="275" class="node-name">SEW</text>
+        <text x="910" y="297" class="node-sub">trace provenance</text>
       </a>
 
       <!-- convergence -->
-      <line x1="771" y1="105" x2="803" y2="139" class="flow-arrow" marker-end="url(#arrowhead)" />
-      <line x1="771" y1="217" x2="803" y2="171" class="flow-arrow" marker-end="url(#arrowhead)" />
-      <rect x="805" y="113" width="96" height="84" rx="10" class="converge" />
-      <text x="853" y="135" class="converge-title">Specification-</text>
-      <text x="853" y="149" class="converge-title">driven,</text>
-      <text x="853" y="163" class="converge-title">execution-</text>
-      <text x="853" y="177" class="converge-title">verified</text>
+      <line x1="798" y1="126" x2="1018" y2="182" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <line x1="988" y1="280" x2="1018" y2="224" class="flow-arrow" marker-end="url(#arrowhead)" />
+      <rect x="1020" y="151" width="110" height="104" rx="12" class="converge" />
+      <text x="1075" y="183" class="converge-title">Specification-</text>
+      <text x="1075" y="200" class="converge-title">driven,</text>
+      <text x="1075" y="217" class="converge-title">execution-</text>
+      <text x="1075" y="234" class="converge-title">verified</text>
 
       <!-- common method -->
-      <rect x="20" y="278" width="881" height="46" rx="10" class="method-band" />
-      <text x="34" y="297" class="method-title">COMMON METHOD · NEURO-SYMBOLIC</text>
-      <text x="34" y="313" class="method-text">LLMs interpret the natural-language specification; deterministic rules, constraint solvers, and actual execution do the structuring and verification.</text>
+      <rect x="20" y="368" width="1110" height="56" rx="12" class="method-band" />
+      <text x="36" y="391" class="method-title">COMMON METHOD · NEURO-SYMBOLIC</text>
+      <text x="36" y="411" class="method-text">LLMs interpret the natural-language specification; deterministic rules, constraint solvers, and actual execution do the structuring and verification.</text>
       </svg>
       </div>
-      <figcaption>How the projects connect: two lanes that each move from predicting or measuring a property to exposing or enforcing it, converging on specification-driven, execution-verified methods. Click a box to open the paper.</figcaption>
+      <figcaption>How the projects connect: two lanes that each move from predicting or measuring a property to exposing, enforcing, or tracing it, converging on specification-driven, execution-verified methods. Click a box to open the paper.</figcaption>
     </figure>
 
     <section class="lane-section">
